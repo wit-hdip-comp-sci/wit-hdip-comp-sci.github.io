@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
+        type="text/css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
+        rel="stylesheet"/>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <style>
+    
+
+body {
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+  font-size:90%;
+  color: black;
+}
+
+p {
+  margin: 0.5em;
+}
+
+pre code {
+  font-family: "Monaco";
+  font-size: 100%;
+}
+
+img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin:10px;
+}
+
+h1, h2, h3 {
+  border-bottom:thin solid black;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
+h1 {
+  font-style:italic;
+  font-size:130%;
+}
+
+h2 {
+  font-size:110%;
+}
+
+h3 {
+  font-size:100%;
+}
+
+
+
+  </style>
+</head>
+
+<body>
+
+
+
+<div class="ui fixed top pointing inverted stackable menu labmenu">
+  <header class="header item">
+    <i id="toc" class="sitemap icon"></i>
+    
+      <a href="../index.html">  1: Introducing HTML  </a>
+    
+  </header>
+  <div class="right tab-menu menu">
+    
+      <a class="item" data-tab="Lab-1.2: HTML Structure">
+        Lab-1.2: HTML Structure
+      </a>
+    
+      <a class="item" data-tab="01">
+        01
+      </a>
+    
+      <a class="item" data-tab="02">
+        02
+      </a>
+    
+      <a class="item" data-tab="03">
+        03
+      </a>
+    
+      <a class="item" data-tab="04">
+        04
+      </a>
+    
+      <a class="item" data-tab="Exercises">
+        Exercises
+      </a>
+    
+  </div>
+</div>
+
+<div class="ui pushable">
+  <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    <br><br>
+    
+      
+        <a class="item"
+           href="/topic01-introducing-html/book-a/index.html">Lab-1.1: Editing HTML </a>
+      
+    
+      
+        <a class="item"
+           href="/topic01-introducing-html/book-b/index.html">Lab-1.2: HTML Structure </a>
+      
+    
+      
+        <a class="item"
+           href="/topic02-inctroducing-css/book/index.html">Lab-2 CSS Intro </a>
+      
+    
+      
+        <a class="item"
+           href="/topic03-box-model/book-a/index.html">Lab-3a Layout </a>
+      
+    
+      
+        <a class="item"
+           href="/topic03-box-model/book-b/index.html">Lab-3b Multicolumn </a>
+      
+    
+      
+        <a class="item"
+           href="/topic01a-intro-to-processing/book-1a/index.html">Lab-1a </a>
+      
+    
+      
+        <a class="item"
+           href="/topic01b-animate-your-drawings/book-1b/index.html">Lab-1b </a>
+      
+    
+      
+        <a class="item"
+           href="/topic02a-if-stmt-and-events/book/index.html">Lab-02a </a>
+      
+    
+      
+        <a class="item"
+           href="/topic-01-intro/book-a-glitch-intro/index.html">Lab-1 Glitch Intro </a>
+      
+    
+      
+        <a class="item"
+           href="/topic-01-intro/book-b-js-introduction/index.html">Lab-2 JS Intro </a>
+      
+    
+      
+        <a class="item"
+           href="/topic-02-controllers-and-views/book-a-gomix-playlist-1/index.html">Lab-3 Playlist 1 </a>
+      
+    
+      
+        <a class="item"
+           href="/topic-03-app-templates+views/book-a-gomix-playlist-2/index.html">Lab-4 Playlist 2 </a>
+      
+    
+      
+        <a class="item"
+           href="/topic-01/book-a/index.html">Home Network </a>
+      
+    
+      
+        <a class="item"
+           href="/topic-02/book-1-vagrant/index.html">Vagrant and Virtualisation </a>
+      
+    
+      
+        <a class="item"
+           href="/topic-03/book-1-packet-sniffing/index.html">Packet Sniffing using TShark </a>
+      
+    
+  </div>
+  <div class="pusher" tabindex="-1">
+    <div class="ui basic segment">
+      <br>
+      
+        <div class="ui tab segment lab" data-tab="Lab-1.2: HTML Structure">
+          <h1>Objectives</h1>
+<p>folders · head · title · link · image · references</p>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="01">
+          <h1>Setup</h1>
+<p>Make sure you have downloaded and installed Sublime Text 3 from</p>
+<ul>
+<li><a href="http://www.sublimetext.com/">http://www.sublimetext.com/</a></li>
+</ul>
+<p>Select the appropriate download for your laptop (OS, Windows, Linux)</p>
+<p>This site has some useful tutorial videos in how to use Sublime Text. You should at least watch the first 2 videos.</p>
+<ul>
+<li><a href="http://code.tutsplus.com/courses/perfect-workflow-in-sublime-text-2">Sublime Tutorial</a></li>
+</ul>
+<p>We recommend using Chrome as your web browser.</p>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="02">
+          <h1>First Project</h1>
+<p>Consider creating a folder structure for your labs - starting with a folder called <code>web-development</code></p>
+<p>Open Sublime and choose <code>Open</code> from the File menu, navigate to the <code>web-development</code> folder you have just created and click <code>Open</code>.</p>
+<p>In sublime click on the <code>web-development</code> folder, right click - and select <code>New Folder</code>. Enter the folder name <code>lab01</code>. In Sublime, you should see the following in the sidebar:</p>
+<p><img src="./img/01.png" alt=""></p>
+<p>Chose New File from the File menu, a new blank page should appear in the sublime window. Click <code>Save</code> on the File menu and name the file <code>index.html</code>, save it into the lab01 folder. You should see the file name appear in the left panel in sublime.</p>
+<p><img src="./img/02.png" alt=""></p>
+<p>Now in File Explorer create another folder in Lab1 that is called images</p>
+<p><img src="./img/03.png" alt=""></p>
+<p>Next you are to save the following images into the images folder:</p>
+<p><img src="./img/ondesoft.jpg" alt=""></p>
+<p><img src="./img/banner.png" alt=""></p>
+<p>Right click on each one and choose Save As. Make sure you save them into the Images folder.</p>
+<p>It is worth making sure your folder structure is the same as this:</p>
+<p><img src="./img/04.png" alt=""></p>
+<p>The WebDevelopment folder will hold a folder for each lab you work on for this module. For today the Lab1 folder will contain at least one .hmtl file as well as an images folder which in turn contains 6 images.</p>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="03">
+          <h1>HTML pages</h1>
+<p>We are going to create a web site that is based on the Google Play site or the Apple app store. It will present mobile apps, music, and movies to the user.</p>
+<p>Choose New File from the File menu, next choose Save from the file menu and name it <code>apps.html</code></p>
+<p>You should now have the following folder and file structure:</p>
+<p><img src="./img/05.png" alt=""></p>
+<p>Next you will write some html code. Copy and paste in the following code:</p>
+<h2>index.html page content</h2>
+<pre><code>
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Bundle APP Store&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;img src=&quot;images/banner.png&quot;/&gt;
+    &lt;h1&gt;Welcome to the App Bundle Store&lt;/h1&gt;
+    &lt;p&gt;
+      This store brings you great app bundles week after week. We select the best power 
+      user apps from a broad range of suppliers and combine them into great deals. These are the highest quality apps form the best publishers, at great prices.  
+    &lt;/p&gt;
+    &lt;p&gt;
+      Whether you are interested in gaming or graphics design, software development or media production - we have the bundle for you. Each &lt;a href=&quot;apps.html&quot;&gt;app bundle&lt;/a&gt; is designed to compliment the others, delivering you an exciting take on a scene.  
+    &lt;/p&gt;
+       &lt;h2&gt;Favourites&lt;/h2&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Hype by Tumult&lt;/li&gt;
+      &lt;li&gt;Webstorm by Idea&lt;/li&gt;
+      &lt;li&gt;Sublime, by sublimetext.com&lt;/li&gt;
+      &lt;li&gt;Desktop Utility by Sweet Productions&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<h2>apps.html page content</h2>
+<pre><code>
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Bundle APP Store&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;img src=&quot;images/banner.png&quot;/&gt;&lt;h1&gt;Score&lt;/h1&gt;
+      &lt;h3&gt;Freebie&lt;/h3&gt;
+     &lt;p&gt;
+       Stacksocial just published its so called Free Ondesoft Mac Tool Bundle, which contains 5 apps from Ondesoft. The bundle worth $146 will be probably available only a couple of days so you’d better hurry up to get it.
+     &lt;/p&gt;
+     &lt;p&gt;
+       &lt;img src=&quot;images/ondesoft.jpg&quot; alt=&quot;Black Brain Brew Elixir&quot; /&gt;
+     &lt;/p&gt;
+     &lt;/p&gt;
+     &lt;hr&gt;
+     &lt;h3&gt;Macware Business Bundle&lt;/h3&gt;
+     &lt;p&gt;
+       Here comes the next bundle for march. This time its macware who publish a bundle. The so called macware Business Bundle contains 6 apps at a price of only $29.99 instead of $199.94. So you can save around 84%. 
+     &lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>Remember to save your files in sublime by clicking File -&gt; Save All</p>
+<p>Test these pages out by opening the index.html in your browser window. Do all of the images display? Does the link to the apps.html page work?</p>
+<p><img src="./img/07.png" alt=""></p>
+<p><img src="./img/08.png" alt=""></p>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="04">
+          <h1>CSS</h1>
+<p>We will now introduce a stylesheet into our project. Stylesheets are usually maintained in separate files with the .css extension. Choose New File from the File menu and name it <code>style.css</code>. </p>
+<p>The folder structure now looks like this:</p>
+<p><img src="./img/12.png" alt=""></p>
+<p>Make sure this file is in the <code>lab01</code> folder - and not in the <code>images</code> folder. This can be hard to see exactly in sublime - so consult Explore/Finder to make sure it is in the correct location.</p>
+<p>We bind this file into the project by &#39;linking&#39; it to our home page. This must be incorporated into the <code>&lt;head</code>&gt; element of each page. Currently index.html head section looks like this:</p>
+<pre><code class="lang-html">  &lt;head&gt;
+    &lt;title&gt;Bundle APP Store&lt;/title&gt;
+  &lt;/head&gt;</code></pre>
+<p>We can extend it with a new element to link to the stylesheet. The head section of the index.html home page should now look like this:</p>
+<pre><code class="lang-html">  &lt;head&gt;
+    &lt;title&gt;Bundle APP Store&lt;/title&gt;
+    &lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;style.css&quot; media=&quot;screen&quot; /&gt;
+  &lt;/head&gt;</code></pre>
+<p>Save your files and open the index.html page in your browser and keep this window open. There is no visible effect on our page yet until we introduce a rule into the stylesheet. </p>
+<p>Type all of the following into the style.css file (note the American spelling of the word color) :</p>
+<pre><code class="lang-css">h1
+{
+  color: red;
+}</code></pre>
+<p>Save all your files. Refresh the index page in your browser and see the result of writing this one css rule.</p>
+<p><img src="./img/09.png" alt=""></p>
+<p>Experiment with the following rules, introducing them one at a time and one after each other in the file:</p>
+<pre><code class="lang-css">body
+{
+  font-family:sans-serif;
+}</code></pre>
+<p>replace the first one you wrote that changed the h1 colour to red with the following:</p>
+<pre><code class="lang-css">h1, h2
+{
+  color: gray
+}</code></pre>
+<p>Add this as another rule to the file:</p>
+<pre><code class="lang-css">h1
+{
+  border-bottom: 1px solid black;
+}</code></pre>
+<p>Your css file now looks like this:</p>
+<p><img src="./img/10.png" alt=""></p>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="Exercises">
+          <h1>Exercises</h1>
+<h1>Solution So Far..</h1>
+<p>This is an archive (zip file) of a solution to the lab so far:</p>
+<ul>
+<li><a href="https://github.com/wit-web-dev-2016/app-store/releases/tag/lab.1.end">https://github.com/wit-web-dev-2016/app-store/releases/tag/lab.1.end</a></li>
+</ul>
+<h2>1: Index.html</h2>
+<p>Just to get used to the editor, create a few more new apps in the &#39;apps.html&#39;, perhaps you can locate content from some web source (including images). Try to identify and replicate the way the code is indented in the existing content.</p>
+<h2>2: New pages</h2>
+<p>Incorporate content into a new <code>directions.html</code> page. It can contain any content you think would be useful. Incorporate some links in each page so you can move around in the site from page to page.</p>
+<h2>3: Link the CSS file to all pages</h2>
+<p>Currently you may not have the CSS file &#39;linked&#39; to app.html or the <code>directions.html</code> page. i.e. only index.html is styled with the css rules you have defined. See if you can link the other pages now.</p>
+<h2>4: HTML Reference</h2>
+<p>If you are finding initial contact with HTML a little challenging - this is an excellent starter resource to review:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics">https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics</a></li>
+</ul>
+<p>It is short read.</p>
+<h2>5: Lists</h2>
+<p>In this lab you used the element <code>&lt;ul</code>&gt;
+Investigate the use of <code>&lt;ol</code>&gt; , find out the differences between these elements here:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Styling_lists">https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Styling_lists</a></li>
+</ul>
+
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).on('keydown', function(e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+  $(document).ready(function() {
+  $('img').addClass('ui image');
+
+  $('.ui.embed').embed();
+
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass(
+        'ui basic segment',
+      );
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+        'ui blue ribbon label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+
+  $('.ui.menu .item').tab({
+    history: true,
+    historyType: 'hash',
+  });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+    .sidebar({ context: $('.pushable') })
+    .sidebar('setting', 'transition', 'slide out')
+    .sidebar('attach events', '#toc');
+});
+
+</script>
+</body>
+</html>

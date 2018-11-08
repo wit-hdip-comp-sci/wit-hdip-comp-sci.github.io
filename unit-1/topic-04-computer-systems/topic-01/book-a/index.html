@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
+        type="text/css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
+        rel="stylesheet"/>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <style>
+    
+
+body {
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+  font-size:90%;
+  color: black;
+}
+
+p {
+  margin: 0.5em;
+}
+
+pre code {
+  font-family: "Monaco";
+  font-size: 100%;
+}
+
+img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin:10px;
+}
+
+h1, h2, h3 {
+  border-bottom:thin solid black;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
+h1 {
+  font-style:italic;
+  font-size:130%;
+}
+
+h2 {
+  font-size:110%;
+}
+
+h3 {
+  font-size:100%;
+}
+
+
+
+  </style>
+</head>
+
+<body>
+
+
+
+<div class="ui fixed top pointing inverted stackable menu labmenu">
+  <header class="header item">
+    <i id="toc" class="sitemap icon"></i>
+    
+      <a href="../index.html">  Introduction to Computing  </a>
+    
+  </header>
+  <div class="right tab-menu menu">
+    
+      <a class="item" data-tab="Home Network">
+        Home Network
+      </a>
+    
+      <a class="item" data-tab="01">
+        01
+      </a>
+    
+      <a class="item" data-tab="02">
+        02
+      </a>
+    
+      <a class="item" data-tab="03">
+        03
+      </a>
+    
+  </div>
+</div>
+
+<div class="ui pushable">
+  <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    <br><br>
+    
+      
+        <a class="item"
+           href="/topic01-introducing-html/book-a/index.html">Lab-1.1: Editing HTML </a>
+      
+    
+      
+        <a class="item"
+           href="/topic01-introducing-html/book-b/index.html">Lab-1.2: HTML Structure </a>
+      
+    
+      
+        <a class="item"
+           href="/topic02-inctroducing-css/book/index.html">Lab-2 CSS Intro </a>
+      
+    
+      
+        <a class="item"
+           href="/topic03-box-model/book-a/index.html">Lab-3a Layout </a>
+      
+    
+      
+        <a class="item"
+           href="/topic03-box-model/book-b/index.html">Lab-3b Multicolumn </a>
+      
+    
+      
+        <a class="item"
+           href="/topic01a-intro-to-processing/book-1a/index.html">Lab-1a </a>
+      
+    
+      
+        <a class="item"
+           href="/topic01b-animate-your-drawings/book-1b/index.html">Lab-1b </a>
+      
+    
+      
+        <a class="item"
+           href="/topic02a-if-stmt-and-events/book/index.html">Lab-02a </a>
+      
+    
+      
+        <a class="item"
+           href="/topic-01-intro/book-a-glitch-intro/index.html">Lab-1 Glitch Intro </a>
+      
+    
+      
+        <a class="item"
+           href="/topic-01-intro/book-b-js-introduction/index.html">Lab-2 JS Intro </a>
+      
+    
+      
+        <a class="item"
+           href="/topic-02-controllers-and-views/book-a-gomix-playlist-1/index.html">Lab-3 Playlist 1 </a>
+      
+    
+      
+        <a class="item"
+           href="/topic-03-app-templates+views/book-a-gomix-playlist-2/index.html">Lab-4 Playlist 2 </a>
+      
+    
+      
+        <a class="item"
+           href="/topic-01/book-a/index.html">Home Network </a>
+      
+    
+      
+        <a class="item"
+           href="/topic-02/book-1-vagrant/index.html">Vagrant and Virtualisation </a>
+      
+    
+      
+        <a class="item"
+           href="/topic-03/book-1-packet-sniffing/index.html">Packet Sniffing using TShark </a>
+      
+    
+  </div>
+  <div class="pusher" tabindex="-1">
+    <div class="ui basic segment">
+      <br>
+      
+        <div class="ui tab segment lab" data-tab="Home Network">
+          <h1>Home Network Investigation</h1>
+<p>Local Network · Network Speed · Connected Devices</p>
+<h2>Objectives</h2>
+<ul>
+<li>Investigate network configuration on your machine</li>
+<li>Check download/upload speeds</li>
+<li>Use Network commands to scan your home network</li>
+</ul>
+<h2>Prerequesites</h2>
+<ul>
+<li>Computer running WIndows/Linux/OSx </li>
+<li>Internet connection</li>
+</ul>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="01">
+          <h1>Network Setup</h1>
+<h2>Introduction</h2>
+<p>You will now investigate your home network setup. Not only is it a good idea to know how you connect to the local network in your home, but also what internet service provider you use, what&#39;s the maximum upload and download speed you can achieve, what IP address you have on the internet and what network interfaces you have on your machine. It may be useful to know these details if you need to troubleshoot connectivity and network issues in later labs.  </p>
+<h2>Your Home Network</h2>
+<p>You are likely to be using one of the following systems to connect to the internet:</p>
+<ul>
+<li>DSL/Fiber wired connection with a home router using an Internet Service Provider (e.g. Eir)</li>
+<li>Mobile Broadband router (sometimes known as a &#39;hotspot&#39;) provided by a mobile network provider (e.g. 3).</li>
+<li>3rd party wireless provider or general apartment complex broadband connection. </li>
+</ul>
+<p>Most solutions will require that you have some form of physical device that can route network traffic from your home network and the internet (usually called <strong>Router</strong>). You can then connect your devices to the router and you&#39;re up and running! Every device that you connect must have a suitable network interface. </p>
+<h2>Your IP address</h2>
+<p>In the on-site day you used the <code>ifconfig</code> command to check out the network interfaces on a virtual machine. Now lets do the same on your actual workstation/laptop.</p>
+<p>Open a terminal window and, at the command prompt, enter the following command for your Operating System:  </p>
+<ul>
+<li>Windows: <code>ipconfig</code></li>
+<li>Linux: <code>ifconfig</code></li>
+<li>OS X: <code>ifconfig</code></li>
+</ul>
+<p>You should see a summary of the network interfaces on your machine:</p>
+<p><img src="./img/ipconfig.jpg" alt="ipconfig on Windows"></p>
+<p>Your network set up will look different depending on various factors such as how you connect (wired, wifi) and how many network interfaces you have on your machine. More than likely, you should have at least 2 at the moment (assuming you completed the on-site lab); Ethernet(wired) and/or Wireless LAN (wifi).</p>
+<p>So how do you know which interface you&#39;re currently using to connect to the internet? Generally, your Operationg System will select the interface with the highest speed. If you&#39;re &#39;wired&#39; (usually 100mbit per second or 1000mbit per second) then that&#39;s the interface that will be used, otherwise it will fall back to wireless. To know for sure, you can have a look at the routing table on your machine. The routing table shows what interfaces network traffic will be sent out on.
+On Windows,Linux and OS X, use the <code>netstat –nr</code> command to see a summary of the routing information. You will see one entry indicated as default(or with a destination of 0.0.0.0). That&#39;s the interface used to connect to the internet. </p>
+<p><img src="./img/routing-table.png" alt="Routing Table (linux)"></p>
+<h3>Exercise</h3>
+<p>Using the above commands, answer the following questions:  </p>
+<ul>
+<li>What interface are you using? </li>
+<li>What is the IP address of the current interface?</li>
+<li>What is the physical address (MAC address) of the current interface?</li>
+<li>How many interfaces are listed on your machine. </li>
+<li>If not already, start up the vagrant box from the on-site day and run the ifconfig/ipconfig on your host machine. Is there a new interface now? If so, why do you think it&#39;s there?</li>
+</ul>
+<h2>Private and Public IP addresses</h2>
+<p><img src="./img/public-ip.png" alt="Private and Public IP addresses"><br>You now know the IP address of your computer on your local area network(LAN). However, this is probably a &quot;local&quot; IP address that is just used in your LAN. It is not the IP address that the rest of the internet uses to interact with your computer. Your internet service provider will assign a single public IP address that is used by your computer (and all other devices on your LAN) and your router can translate traffic between local and public IP addresses. There are several  web services that can be used to find out your public IP address.<br>In a browser, go to <a href="www.google.ie">Google</a> and search &quot;what is my IP&quot;. You’ll see the Public IP address of your computer.
+<img src="./img/google-ip.png" alt="Public IP Address"><br>IP addresses are managed by the Internet Assigned Numbers Authority (IANA), which has overall responsibility for the Internet Protocol (IP) address pool. 
+Your public IP address is usually based on a real-world location and can be used to estimate where you are. For example, your IP address can be used to give you weather forecasts for the town you&#39;re in or to advertise local services in the area. To see this in action, you can use several web sites that will display your IP address and location.<br>In a web browser, go to www.acuweather.com and see the result...</p>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="02">
+          <h1>Need for Speed</h1>
+<p>As we&#39;ll discuss in class, there&#39;s are several factors that can affect the quality of your connection and the speed of your machine. Typically, broadband speed is measured in <strong>Megabits per second</strong>, commonly written as <code>Mb</code> or <code>Mbps</code> (as in 24Mb or 24Mbps). It is the rate at which data is transferred either from (download) or to (upload) a location in the internet. As there are 8 bits in a byte, 1 Megabit per second (the unit internet speeds are measured in) is 8 times slower than 1 Megabyte per second.</p>
+<p>You will now check your connection speed using <strong>speed-test</strong>, a Javascript utility that&#39;s curated on the Node Package Management platform (NPM). If you haven&#39;t already, you will need to install <a href="https://nodejs.org/en/download/">Node</a> on your machine to accrss and run this utility. </p>
+<p>Open a terminal window on your machine and install speed-test as follows:</p>
+<pre><code class="lang-bash">npm install --global speed-test</code></pre>
+<p>Once installed, enter <code>speed-test --help</code> at the command prompt to check out it&#39;s useage.
+<img src="./img/speed1.png" alt="Speed-Test help"><br>Now run a test in verbose mode by entering <code>speed-test -v</code>. You should see output similar to the following:
+<img src="./img/speed2.png" alt="Speed-Test help"><br>Run the test again, this time let&#39;s get the result in megabytes per second:<br><img src="./img/speed3.png" alt="Speed-Test help">  </p>
+<p>So you can now compare this to what you Internet Service Provider states they can provide (usually they state <em>&quot;up to 100Mbps&quot;</em>). </p>
+<h2>File Speed Test</h2>
+<p>Certian research groups used to test network speed by measuring how long it would take to tranfer the entire boxset of &quot;The Sopranos&quot; from one location to another. We&#39;ll now mimic this using a short node script to request a file of 50MB.</p>
+<p>Create a new javascript file called <code>download-tester.js</code> and enter the following code:</p>
+<pre><code class="lang-javascript">const fs = require(&#39;fs&#39;)
+const request = require(&#39;request&#39;)
+const progress = require(&#39;request-progress&#39;)
+
+progress(request(&#39;https://goo.gl/pXKZuV&#39;))
+ .on(&#39;progress&#39;, state =&gt; {
+   console.log(state)
+  })
+  .on(&#39;error&#39;, err =&gt; console.log(err))
+  .on(&#39;end&#39;, () =&gt; {})
+  .pipe(fs.createWriteStream(&#39;bar.zip&#39;))</code></pre>
+<p>This requests a 50MB file hosted on Google cloud. Based on this size, and looking at the download speeds, we can calculate the approx. download time of 16 second. The results are as follows:</p>
+<pre><code class="lang-json">{ time: { elapsed: 15.005, remaining: null },
+  speed: 3283182.8723758743,
+  percent: null,
+  size: { total: null, transferred: 49264159 } }</code></pre>
+<p>As you can see here, the time taken is a little quicker that expected. Now try to get the same file from a different location (UK). Change the URL in the node program to the following and execute it again:</p>
+<p><a href="http://ipv4.download.thinkbroadband.com/50MB.zip">http://ipv4.download.thinkbroadband.com/50MB.zip</a></p>
+<ul>
+<li>How does the download speed compare to the first example?</li>
+<li>Compare all 3 results. Try to come up with a reason(hypothesis) for any differences in the numbers.</li>
+</ul>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="03">
+          <h1>Who&#39;s on the network...</h1>
+<p><strong>nmap</strong> (Network Mapper) is an open-source tool that allows you to discover devices on a network. It&#39;s available for Linux, macOS, and Windows. You will now use nmap to scan your home LAN and list all connected devices. </p>
+<h2>Install</h2>
+<h3>Windows and OSX</h3>
+<p>To install on mac or Windows, see the nmap.org download page <a href="https://nmap.org/download.html">here</a>.</p>
+<h3>Linux</h3>
+<p>To install on Linux, install the nmap package. To do this, load your terminal and run the command <code>apt-get install nmap</code>. (If it does not run due to permissions, try <code>sudo apt-get install nmap</code>).</p>
+<h2>Subnet Address</h2>
+<p>To use nmap to scan the devices on your network, you need to know the subnet you are connected to (we will duscuss subnets later...). Previously in this lab, you found the current IP address of the computer you are using on the LAN. 
+Now you have the IP address of your computer, you will scan the whole subnet for other devices. For example, if your IP address is 192.168.1.100, other devices,such as smart will be at addresses like 192.168.1.101, 192.168.1.34, 192.168.1.4, etc.</p>
+<h2>Scan the Subnet</h2>
+<p>In the terminal window, use the nmap command with the -sn flag (ping scan) on the whole subnet range. This may take a few seconds:</p>
+<pre><code class="lang-bash">nmap -sn 192.168.1.0/24</code></pre>
+<p>Note: The <code>192.168.1</code> part in the command above should be replaced by the first 3 parts of the IP address you attained previously.</p>
+<p>Ping scan will &quot;ping&quot; all the IP addresses to see if they respond. For each device that responds to the ping, the output shows the hostname and IP address as follows:
+<img src="./img/nmap-scan.png" alt="nmap scan"><br>Examine the list. It should contain the machine you&#39;re working on and probably the router your connected to among other devices. Hopefully you recognise all devices on your list!</p>
+<h2>Exercise</h2>
+<p>Some devices can hide from Pings. Are there any connected device missing from the list? For example, did your phone respond(assuming it&#39;s on and you connect to Wifi while at home)? If not, why do you think this is the case?</p>
+
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).on('keydown', function(e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+  $(document).ready(function() {
+  $('img').addClass('ui image');
+
+  $('.ui.embed').embed();
+
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass(
+        'ui basic segment',
+      );
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+        'ui blue ribbon label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+
+  $('.ui.menu .item').tab({
+    history: true,
+    historyType: 'hash',
+  });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+    .sidebar({ context: $('.pushable') })
+    .sidebar('setting', 'transition', 'slide out')
+    .sidebar('attach events', '#toc');
+});
+
+</script>
+</body>
+</html>

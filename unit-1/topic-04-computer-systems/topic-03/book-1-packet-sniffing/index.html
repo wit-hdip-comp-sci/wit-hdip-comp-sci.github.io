@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
+        type="text/css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
+        rel="stylesheet"/>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <style>
+    
+
+body {
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+  font-size:90%;
+  color: black;
+}
+
+p {
+  margin: 0.5em;
+}
+
+pre code {
+  font-family: "Monaco";
+  font-size: 100%;
+}
+
+img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin:10px;
+}
+
+h1, h2, h3 {
+  border-bottom:thin solid black;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
+h1 {
+  font-style:italic;
+  font-size:130%;
+}
+
+h2 {
+  font-size:110%;
+}
+
+h3 {
+  font-size:100%;
+}
+
+
+
+  </style>
+</head>
+
+<body>
+
+
+
+<div class="ui fixed top pointing inverted stackable menu labmenu">
+  <header class="header item">
+    <i id="toc" class="sitemap icon"></i>
+    
+      <a href="../index.html">  TCP/IP Protocol Stack  </a>
+    
+  </header>
+  <div class="right tab-menu menu">
+    
+      <a class="item" data-tab="Packet Sniffing using TShark">
+        Packet Sniffing using TShark
+      </a>
+    
+      <a class="item" data-tab="01">
+        01
+      </a>
+    
+      <a class="item" data-tab="02">
+        02
+      </a>
+    
+      <a class="item" data-tab="03">
+        03
+      </a>
+    
+      <a class="item" data-tab="04">
+        04
+      </a>
+    
+      <a class="item" data-tab="05">
+        05
+      </a>
+    
+  </div>
+</div>
+
+<div class="ui pushable">
+  <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    <br><br>
+    
+      
+        <a class="item"
+           href="/topic01-introducing-html/book-a/index.html">Lab-1.1: Editing HTML </a>
+      
+    
+      
+        <a class="item"
+           href="/topic01-introducing-html/book-b/index.html">Lab-1.2: HTML Structure </a>
+      
+    
+      
+        <a class="item"
+           href="/topic02-inctroducing-css/book/index.html">Lab-2 CSS Intro </a>
+      
+    
+      
+        <a class="item"
+           href="/topic03-box-model/book-a/index.html">Lab-3a Layout </a>
+      
+    
+      
+        <a class="item"
+           href="/topic03-box-model/book-b/index.html">Lab-3b Multicolumn </a>
+      
+    
+      
+        <a class="item"
+           href="/topic01a-intro-to-processing/book-1a/index.html">Lab-1a </a>
+      
+    
+      
+        <a class="item"
+           href="/topic01b-animate-your-drawings/book-1b/index.html">Lab-1b </a>
+      
+    
+      
+        <a class="item"
+           href="/topic02a-if-stmt-and-events/book/index.html">Lab-02a </a>
+      
+    
+      
+        <a class="item"
+           href="/topic-01-intro/book-a-glitch-intro/index.html">Lab-1 Glitch Intro </a>
+      
+    
+      
+        <a class="item"
+           href="/topic-01-intro/book-b-js-introduction/index.html">Lab-2 JS Intro </a>
+      
+    
+      
+        <a class="item"
+           href="/topic-02-controllers-and-views/book-a-gomix-playlist-1/index.html">Lab-3 Playlist 1 </a>
+      
+    
+      
+        <a class="item"
+           href="/topic-03-app-templates+views/book-a-gomix-playlist-2/index.html">Lab-4 Playlist 2 </a>
+      
+    
+      
+        <a class="item"
+           href="/topic-01/book-a/index.html">Home Network </a>
+      
+    
+      
+        <a class="item"
+           href="/topic-02/book-1-vagrant/index.html">Vagrant and Virtualisation </a>
+      
+    
+      
+        <a class="item"
+           href="/topic-03/book-1-packet-sniffing/index.html">Packet Sniffing using TShark </a>
+      
+    
+  </div>
+  <div class="pusher" tabindex="-1">
+    <div class="ui basic segment">
+      <br>
+      
+        <div class="ui tab segment lab" data-tab="Packet Sniffing using TShark">
+          <h1>Network Traffic Monitoring and Analysis</h1>
+<p>Use TShark to capture and analyse network traffic.</p>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="01">
+          <h2>Objectives</h2>
+<p><img src="./img/topology1.png" alt="Topology"></p>
+<p>Wireshark is a software protocol analyzer, or &quot;packet sniffer&quot; application, used
+for network troubleshooting, analysis, software and protocol development, and education. In this lab, you will:</p>
+<ul>
+<li>Capture and Analyse Local ICMP Data using Wireshark</li>
+<li>Start and stop data capture of ping traffic to local hosts.</li>
+<li>Locate the IP and MAC address information in captured PDUs.</li>
+<li>Capture and Analyze Remote ICMP Data in Wireshark.</li>
+<li>Start and stop data capture of ping traffic to remote hosts.</li>
+<li>Locate the IP and MAC address information in captured PDUs.</li>
+<li>Explain why MAC addresses for remote hosts are different than the MAC addresses of local hosts.</li>
+</ul>
+<h3>Required Resources</h3>
+<ul>
+<li>Computer with Internet Access</li>
+<li>Vagrant</li>
+<li>VirtualBox</li>
+<li>Complete last week2 lab - Vagrant and Virtualisation </li>
+</ul>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="02">
+          <h2>Set up Virtual Network</h2>
+<ol>
+<li>Create a lab directory called <strong>cs-nets-lab3</strong>.</li>
+<li>Open a terminal window in the directory and run <code>vagrant init</code> to initialise it as a vagrant project</li>
+<li>Replace the contents of the Vagrantfile with the following code:</li>
+</ol>
+<pre><code class="lang-ruby">VAGRANTFILE_API_VERSION = &quot;2&quot;
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+config.vm.define &quot;pc0&quot; do |pc0|
+pc0.vm.hostname = &quot;pc0&quot;
+pc0.vm.network :private_network, ip: &quot;192.168.5.2&quot;
+end
+config.vm.define &quot;pc1&quot; do |pc1|
+pc1.vm.hostname = &quot;pc1&quot;
+pc1.vm.network :private_network, ip: &quot;192.168.5.3&quot;
+end
+config.vm.box = &quot;frankwalsh/labvm&quot;
+config.ssh.forward_x11 = true
+end</code></pre>
+<ol>
+<li>Start the virtual environment in the usual way:  <pre><code class="lang-bash">$ vagrant up</code></pre>
+The Vagrantfile will create the following network topology consisting of two linux machines connected using a private network (192.168.5.0,  mask 255.255.255.0).</li>
+</ol>
+<p><img src="./img/topology2.png" alt="Virtual Machine Topology"></p>
+<ol>
+<li>Check if you can &quot;see&quot; the new VMs from your host. <strong>From your host,</strong> Ping both using the IP addresses you assigned to them in your Vagrantfile.<br>```
+ping 192.168.5.2</li>
+</ol>
+<p>ping 192.168.5.3
+``` 
+Both should respond successfully.</p>
+<p>You will now send and monitor network traffic between pc0, pc1 and the host machine. </p>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="03">
+          <h2>Capture and Analyse Local ICMP Data in Wireshark</h2>
+<p>You will now ping another PC on the private network and capture ICMP requests and replies in
+tshark. You will also look inside the frames captured for specific information. This analysis should help to
+clarify how packet headers are used to transport data to their destination.</p>
+<h3>Retrieve your PC’s interface configuration</h3>
+<p>You will need to record your host machines IP address and its network interface card (NIC) physical address, also called the MAC address.</p>
+<ol>
+<li>On the host machine, open a command window, type <code>ipconfig /all</code>, and then press Enter. If you are using Linux/Windows, type <code>ifconfig</code>, and then press enter.</li>
+<li>Note your PC interface’s IP address and MAC (physical) address. The output should look similar, but not exactly like , the following:</li>
+</ol>
+<pre><code class="lang-bash">$ ifconfig
+eno1      Link encap:Ethernet  HWaddr 34:e6:d7:06:ef:6f  
+          inet addr:10.7.10.119  Bcast:10.7.10.255  Mask:255.255.255.0
+          inet6 addr: 2001:770:20:4170:6007:1aee:c8c5:fa34/64 Scope:Global
+          inet6 addr: 2001:770:20:4170:5a4:59da:ea78:af39/64 Scope:Global
+          inet6 addr: fe80::3e41:4078:8c63:11b3/64 Scope:Link
+          inet6 addr: 2001:770:20:4170:202a:4ab8:e8ab:c269/128 Scope:Global
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:2210075 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1114716 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:3081845821 (3.0 GB)  TX bytes:99193430 (99.1 MB)
+          Interrupt:20 Memory:f7400000-f7420000
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:70395 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:70395 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:9231548 (9.2 MB)  TX bytes:9231548 (9.2 MB)
+
+vboxnet0  Link encap:Ethernet  HWaddr 0a:00:27:00:00:00  
+          inet addr:192.168.5.1  Bcast:192.168.5.255  Mask:255.255.255.0
+          inet6 addr: fe80::800:27ff:fe00:0/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:975 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:0 (0.0 B)  TX bytes:162768 (162.7 KB)</code></pre>
+<h3>SSH in to pc0 and start using TShark</h3>
+<ol>
+<li>In a terminal window open in the vagrant project directory(cs-nets-lab3),  open a SSH session with pc0 using the following command:<pre><code class="lang-bash">vagrant ssh pc0</code></pre>
+</li>
+<li>Have a look at the network configuration and take note the name of the various inteface adapters:<pre><code class="lang-bash">vagrant@pc0:~$ ifconfig
+eth0      Link encap:Ethernet  HWaddr 08:00:27:1b:25:c4  
+       inet addr:10.0.2.15  Bcast:10.0.2.255  Mask:255.255.255.0
+       inet6 addr: fe80::a00:27ff:fe1b:25c4/64 Scope:Link
+       UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+       RX packets:647 errors:0 dropped:0 overruns:0 frame:0
+       TX packets:547 errors:0 dropped:0 overruns:0 carrier:0
+       collisions:0 txqueuelen:1000 
+       RX bytes:71816 (71.8 KB)  TX bytes:63132 (63.1 KB)
+eth1      Link encap:Ethernet  HWaddr 08:00:27:bb:e7:ef  
+       inet addr:192.168.5.2  Bcast:192.168.5.255  Mask:255.255.255.0
+       inet6 addr: fe80::a00:27ff:febb:e7ef/64 Scope:Link
+       UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+       RX packets:17 errors:0 dropped:0 overruns:0 frame:0
+       TX packets:13 errors:0 dropped:0 overruns:0 carrier:0
+       collisions:0 txqueuelen:1000 
+       RX bytes:3169 (3.1 KB)  TX bytes:1062 (1.0 KB)</code></pre>
+</li>
+<li>We will use tshark to start monitoring network traffic on interface <em>eth1</em> on <em>pc0</em>. The <em>eth1</em> interface connects pc0 to the private network on the host machine(see the diagram on page 1).Initially we will view the results in the console. First we need to configure tshark to allow access to the network interfaces and to  /usr/bin/dumpcap for logging. 
+In the pc0 ssh session do the following:</li>
+</ol>
+<p>Enter the following command:  </p>
+<pre><code class="lang-bash">sudo dpkg-reconfigure wireshark-common</code></pre>
+<p>and select &quot;yes&quot; in the dialog window:  </p>
+<p><img src="./img/tshark-conf.png" alt="Configuring TShark"></p>
+<p>Modify the permissions on /usr/bin/dumpcap as follows:</p>
+<pre><code class="lang-bash">vagrant@pc0:~$ sudo chmod +x /usr/bin/dumpcap</code></pre>
+<p>Enter the following command to capture the next 10 packets on interface <em>eth1</em> and print it to the console.</p>
+<pre><code class="lang-bash">tshark -i eth1 -c 10
+Capturing on &#39;eth1&#39;</code></pre>
+<p>You will probably start to see traffic immediately. We can apply a filter to make it easier to view and work with the data that is being captured by tshark. For now, we are only interested in displaying ICMP (ping) PDUs. This time, you will configure tshark will output results to <em>/vagrant/pc0-eth1-traffic1.log</em>.</p>
+<h3>Capture Filters</h3>
+<p>Sometimes, particularly on busy networks, Capture filters are applied during data capturing  in order to discard network traffic that you&#39;re not interested in. This can be done using the -f (filter) command-line parameter, followed by a filter criteria.</p>
+<p>There are many filters you can apply. In this case we are just interested in ICPM traffic.
+Remember that filter strings always should be written in lowercase.
+4. Stop TShark if it&#39;s still capturing traffic by entering <code>ctrl+c</code> in the ssh terminal.  Now enter the following:</p>
+<pre><code class="lang-bash">vagrant@pc0:~$ tshark -i eth1 -f icmp</code></pre>
+<ol>
+<li>Now bring up a command prompt window <em>on your host machine</em> and ping the IP address of pc0 .<pre><code class="lang-bash">$ ping 192.168.5.2
+PING 192.168.5.2 (192.168.5.2) 56(84) bytes of data.
+64 bytes from 192.168.5.2: icmp_seq=1 ttl=64 time=0.543 ms
+64 bytes from 192.168.5.2: icmp_seq=2 ttl=64 time=0.445 ms
+64 bytes from 192.168.5.2: icmp_seq=3 ttl=64 time=0.339 ms
+64 bytes from 192.168.5.2: icmp_seq=4 ttl=64 time=0.336 ms</code></pre>
+</li>
+<li><p>After the ping has executed for a while, you should see the  ICMP traffic similar to the following:</p>
+<pre><code>1   0.000000  192.168.5.1 -&gt; 192.168.5.2  ICMP 98 Echo (ping) request  id=0x5dc4, seq=1/256, ttl=64
+2   0.000061  192.168.5.2 -&gt; 192.168.5.1  ICMP 98 Echo (ping) reply    id=0x5dc4, seq=1/256, ttl=64 (request in 1)
+3   1.011293  192.168.5.1 -&gt; 192.168.5.2  ICMP 98 Echo (ping) request  id=0x5dc4, seq=2/512, ttl=64
+4   1.011348  192.168.5.2 -&gt; 192.168.5.1  ICMP 98 Echo (ping) reply    id=0x5dc4, seq=2/512, ttl=64 (request in 3)
+5   2.035378  192.168.5.1 -&gt; 192.168.5.2  ICMP 98 Echo (ping) request  id=0x5dc4, seq=3/768, ttl=64
+6   2.035403  192.168.5.2 -&gt; 192.168.5.1  ICMP 98 Echo (ping) reply    id=0x5dc4, seq=3/768, ttl=64 (request in 5)
+7   3.059853  192.168.5.1 -&gt; 192.168.5.2  ICMP 98 Echo (ping) request  id=0x5dc4, seq=4/1024, ttl=64
+8   3.059878  192.168.5.2 -&gt; 192.168.5.1  ICMP 98 Echo (ping) reply    id=0x5dc4, seq=4/1024, ttl=64 (request in 7)
+9   4.087767  192.168.5.1 -&gt; 192.168.5.2  ICMP 98 Echo (ping) request  id=0x5dc4, seq=5/1280, ttl=64
+10   4.087801  192.168.5.2 -&gt; 192.168.5.1  ICMP 98 Echo (ping) reply    id=0x5dc4, seq=5/1280, ttl=64 (request in 9)
+11   5.112781  192.168.5.1 -&gt; 192.168.5.2  ICMP 98 Echo (ping) request  id=0x5dc4, seq=6/1536, ttl=64
+12   5.112833  192.168.5.2 -&gt; 192.168.5.1  ICMP 98 Echo (ping) reply    id=0x5dc4, seq=6/1536, ttl=64 (request in 11)
+13   6.132123  192.168.5.1 -&gt; 192.168.5.2  ICMP 98 Echo (ping) request  id=0x5dc4, seq=7/1792, ttl=64
+14   6.132146  192.168.5.2 -&gt; 192.168.5.1  ICMP 98 Echo (ping) reply    id=0x5dc4, seq=7/1792, ttl=64 (request in 13)
+15   7.157211  192.168.5.1 -&gt; 192.168.5.2  ICMP 98 Echo (ping) request  id=0x5dc4, seq=8/2048, ttl=64
+16   7.157264  192.168.5.2 -&gt; 192.168.5.1  ICMP 98 Echo (ping) reply    id=0x5dc4, seq=8/2048, ttl=64 (request in 15)</code></pre>
+<blockquote>
+<p><strong>Note:</strong> If your pings fail, this may be because your host firewall is
+blocking the requests. If this happens, try pinging pc0 from pc1.</p>
+</blockquote>
+</li>
+<li><p>Now, if need be, stop TShark capturing traffic by entering <code>ctrl+c</code> in the SSH session.</p>
+</li>
+</ol>
+<h2>Display filters.</h2>
+<p>Display filters are applied after packet capturing and just &quot;hide&quot; network traffic fields you are not interested in and display the ones you are interested in. Display filters are specified using the -T command line parameter followed by the fields you wish to display.  You can use them to &quot;query&quot; your network data. For example, you might want to see packets sent to your machine from a particular IP address. You always can remove the effects of a display filter and get all your data back.<br>You will now examine the data that was generated by the ping requests from the host machine. Tshark can produce data in a standard format (called pcap) so that it can be analysed later. As well as capturing network data, tshark can also be used to analyse pcap files.
+The previous section displayed the list of PDU frames captured as a summary of the IP packet information. We now want to investigate the various PDU layers and analyse the values.</p>
+<h3>Record Network traffic in a pcap file.</h3>
+<p>You will now record 10 icmp packets on eth1 interface, and write the results to file <code>/vagrant/pc0-eth1-traffic1.pcap</code>
+- In the ssh session for pc0, enter the following command to capture up to 10 frames and write them (-w paramater) to /vagrant/pc0-eth1-traffic1.pcap.</p>
+<pre><code class="lang-bash">vagrant@pc0:~$ tshark -i eth1 -f icmp -c 10 -w /vagrant/pc0-eth1-traffic1.pcap
+Capturing on &#39;eth1&#39;</code></pre>
+<p>And, as before, ping pc0 from the host machine. TShark will record next 10 ICMP frames.
+We will now use <code>/vagrant/pc0-eth1-traffic1.pcap</code> to analyse the data at different levels</p>
+<h3>IP information</h3>
+<p>The above console listing in the previous section gives a summary of the IPv4 PDU. You can easily see the soucrce and destination ipv4 addresses which correspond to what we expect (192.168.5.1 is the host, 192.168.5.2 is pc0). We will now use the pcap file to display ip summary:</p>
+<pre><code class="lang-bash">tshark -r /vagrant/pc0-eth1-traffic1.pcap</code></pre>
+<p>This instructs tshark to read <code>/vagrant/pc0-eth1-traffic1.pcap</code> and output the result to the console. But what if we want to see just the Ethernet PDU information? This is also recorded in the pcap file, we just need to tell tshark to display it.</p>
+<h3>Ethernet PDU</h3>
+<p>To get information relating to Ethernet PDUs for each packet, run the following command:</p>
+<pre><code class="lang-shell">vagrant@pc0:~$ tshark -r /vagrant/pc0-eth1-traffic1.pcap -T fields -e ip -e eth
+Internet Protocol Version 4, Src: 192.168.5.1 (192.168.5.1), Dst: 192.168.5.2 (192.168.5.2)    Ethernet II, Src: 0a:00:27:00:00:00 (0a:00:27:00:00:00), Dst: CadmusCo_39:b3:3d (08:00:27:39:b3:3d)
+Internet Protocol Version 4, Src: 192.168.5.2 (192.168.5.2), Dst: 192.168.5.1 (192.168.5.1)    Ethernet II, Src: CadmusCo_39:b3:3d (08:00:27:39:b3:3d), Dst: 0a:00:27:00:00:00 (0a:00:27:00:00:00)</code></pre>
+<p>Lets examine just the first captured packet in the file:</p>
+<pre><code class="lang-bash">tshark -r /vagrant/pc0-eth1-traffic1.pcap -c 1 -T fields -e ip -e eth
+Internet Protocol Version 4, Src: 192.168.5.1 (192.168.5.1), Dst: 192.168.5.2 (192.168.5.2)    Ethernet II, Src: 0a:00:27:00:00:00 (0a:00:27:00:00:00), Dst: CadmusCo_39:b3:3d (08:00:27:39:b3:3d)
+vagrant@pc0:~$</code></pre>
+<p>As indicated above, the source and destination ip adresses match what you would have recorded from the <code>ifconfig</code>(or ipconfig on Windows) command in the host and pc0 respectively. Similarly, the physical (MAC) address of the src and destination should match what was observed earlier.</p>
+<h3>Capture and Analyse Remote ICMP Data</h3>
+<p>You will now ping remote hosts (hosts not on the LAN) and examine the generated data from those
+pings. You will then determine what is different about this data from the data examined the previous section.</p>
+<ul>
+<li><p>In the SSH session on pc0, start capturing ICMP packets, this time on the eth0 interface.</p>
+<pre><code class="lang-bash">tshark -w /vagrant/pc0-eth0-traffic1.pcap -i eth0 -f icmp</code></pre>
+</li>
+<li><p>Now, open a second terminal on your host and start another ssh session to pc0  by running <code>vagrant ssh pc0</code> in the vagrant project directory.</p>
+</li>
+<li><p>From the second SSH session, enter <code>ping google.ie</code>. As soon as you see the replies, the count in the first SSH session should start to increment correspondingly. The following figure illustrates the two SSH session terminals:</p>
+</li>
+</ul>
+<p><img src="./img/consoles.png" alt="Pinging google.ie and recording ICMP traffic">  </p>
+<ul>
+<li>Stop tshark recording network traffic by entering <em>ctrl+c</em> in the SSH session window. Now examine the file <code>/vagrant/pc0-eth0-traffic1.pcap</code> . Note that, when you ping the URLs listed, the Domain Name Server (DNS) translates the URL to an IP address.</li>
+<li>Try the same procedure for www.cisco.com and www.yahoo.com. Note the IP address received for each URL.  </li>
+</ul>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="04">
+          <h1>FTP PDU Capture</h1>
+<p>In this section you will examine File Transfer Protocol (FTP) network traffic. Remember from the lectures that we said FTP traffic is through port 21 (control) and 20(data)</p>
+<ul>
+<li>As before, start capturing network data on machine pc0, network interface eth0. This time, store the data in file <code>/vagrant/pc0-eth0-traffic2.pcap</code>. This time, we will filter to port 20 and 21. This is specified using the <em>pcap filter syntax</em> indicated by the <em>-f</em> flag.</li>
+</ul>
+<pre><code class="lang-bash">tshark -w /vagrant/pc0-eth0-traffic2.pcap -i eth0 -f &quot;tcp port 20 or tcp port 21&quot;</code></pre>
+<ul>
+<li><p>As before, open another SSH session(or reuse the previous session if still in use) to pc0 using <code>vagrant ssh pc0</code> and  enter <code>ftp ftp.heanet.ie</code>.</p>
+</li>
+<li><p>When the connection is established, enter anonymous as the user without a password, i.e.
+Userid: anonymous
+Password: <ENTER></p>
+</li>
+<li><p>You should see tshark start to record FTP traffic similar to what is shown below:
+<img src="./img/consoles2.png" alt="FTP Network Traffic"></p>
+</li>
+<li><p>examine the captured traffic as before:</p>
+<pre><code>tshark -r /vagrant/pc0-eth0-traffic2.pcap</code></pre>
+<p>This gives you a summary of the frames similar to the following</p>
+<pre><code>1 0.000000000    10.0.2.15 -&gt; 193.1.193.64 TCP 74 54307→21 [SYN] Seq=0 Win=29200 Len=0 MSS=1460 SACK_PERM=1 TSval=3999232 TSecr=0 WS=64
+2 0.008329000 193.1.193.64 -&gt; 10.0.2.15    TCP 60 21→54307 [SYN, ACK] Seq=0 Ack=1 Win=65535 Len=0 MSS=1460
+3 0.008362000    10.0.2.15 -&gt; 193.1.193.64 TCP 54 54307→21 [ACK] Seq=1 Ack=1 Win=1868800 Len=0
+4 0.020390000 193.1.193.64 -&gt; 10.0.2.15    FTP 143 Response: 220-
+5 0.020427000 193.1.193.64 -&gt; 10.0.2.15    FTP 398 Response: 220------------------------------------------------------------------------------
+6 0.020519000    10.0.2.15 -&gt; 193.1.193.64 TCP 54 54307→21 [ACK] Seq=1 Ack=90 Win=1868800 Len=0
+7 0.020618000    10.0.2.15 -&gt; 193.1.193.64 TCP 54 54307→21 [ACK] Seq=1 Ack=434 Win=1921024 Len=0</code></pre>
+</li>
+<li>Select an FTP frame, note it&#39;s number and run tshark again, using the -Y flag and the frame number to get more details about the FTP frame:<pre><code>tshark -r /vagrant/pc0-eth0-traffic2.pcap -V -Y &quot;frame.number==4&quot;</code></pre>
+</li>
+<li>Examine the output. What protocols encapsulated in the FTP frame? Have a look at the encapsulation and Ethernet frame slides as a reference and try to relate them to the recorded frame. </li>
+</ul>
+<h3>FTP Security</h3>
+<ul>
+<li>Now locate the frames containing the user FTP name and password you entered in the ssh session. From what you see in the frames, what does this say about the security of the FTP login process?</li>
+</ul>
+<p>hint: you can also use <code>grep</code> to filter out unwanted packets:</p>
+<pre><code class="lang-bash">tshark -r /vagrant/pc0-eth1-traffic2.pcap | grep FTP
+  4 0.020390000 193.1.193.64 -&gt; 10.0.2.15    FTP 143 Response: 220-
+  5 0.020427000 193.1.193.64 -&gt; 10.0.2.15    FTP 398 Response: 220------------------------------------------------------------------------------
+  8 0.027703000 193.1.193.64 -&gt; 10.0.2.15    FTP 393 Response: 220- * This is a four node cluster with 10 Gigabit access to the HEAnet backbone.
+ 10 6.065778000    10.0.2.15 -&gt; 193.1.193.64 FTP 70 Request: USER anonymous
+ 12 6.075246000 193.1.193.64 -&gt; 10.0.2.15    FTP 129 Response: 331 Anonymous login ok, send your complete email address as your password
+ 14 14.371135000    10.0.2.15 -&gt; 193.1.193.64 FTP 75 Request: PASS fxwalsh@wit.ie
+ 16 14.382730000 193.1.193.64 -&gt; 10.0.2.15    FTP 104 Response: 230 Anonymous access granted, restrictions apply
+ 18 14.383077000    10.0.2.15 -&gt; 193.1.193.64 FTP 60 Request: SYST
+ 20 14.391252000 193.1.193.64 -&gt; 10.0.2.15    FTP 73 Response: 215 UNIX Type: L8
+ 22 32.045515000    10.0.2.15 -&gt; 193.1.193.64 FTP 60 Request: QUIT
+ 24 32.053020000 193.1.193.64 -&gt; 10.0.2.15    FTP 68 Response: 221 Goodbye.</code></pre>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="05">
+          <h1>HTTP PDU Capture</h1>
+<p>You will now run tshark to capture HTTP traffic on interface <em>eth0</em> and write the data to <code>/vagrant/pc0-eth0-traffic3.pcap</code></p>
+<ul>
+<li><p>In a new or existing SSH session with pc0, start capturing tcp traffic on port 80.</p>
+<pre><code class="lang-bash">$ tshark -w /vagrant/pc0-eth0-traffic2.pcap -i eth0 -f &quot;tcp port 80&quot;</code></pre>
+<ul>
+<li>Open another SSH session with pc0 and make a HTTP request for the google home page.</li>
+</ul>
+<pre><code class="lang-bash">$ wget http://www.google.ie</code></pre>
+<p>You should see output similar to whats shown in the following diagram. The<br>packet capture should start to increment as soon as you make the HTTP request (using <code>wget</code>) from the second SSH session terminal.
+<img src="./img/consoles3.png" alt="HTTP Traffic Capture"></p>
+</li>
+<li><p>Locate and identify the TCP and HTTP packets associated with the webpage download. Note the similarity between these message exchanges and the FTP exchanges in the previous page.</p>
+</li>
+<li><p>Find a HTTP response packet with the command <code>tshark -r /vagrant/pc0-eth0-traffic2.pcap -Y http.response</code>. This should find the Frame that contains the resonse from Google. You should see something simimlar to the following:</p>
+<pre><code class="lang-bash">$ tshark -r /vagrant/pc0-eth0-traffic2.pcap -Y http.response
+14 0.037869000 216.58.211.163 -&gt; 10.0.2.15    HTTP 421 HTTP/1.1 200 OK  (text/html)</code></pre>
+</li>
+<li><p>Examine the payload of the HTTP response packet with the following command:   </p>
+<pre><code class="lang-bash">tshark -r /vagrant/pc0-eth0-traffic2.pcap -Y &quot;http.response&quot; -T fields -e text</code></pre>
+<p>Hopefully you recognise what the payload text is from your web dev module!</p>
+</li>
+<li><p>You can extract specific data from HTTP traffic. Using the -T, you can specify that we want to extract fields and with the -e options we identify which fields we want to extract.</p>
+</li>
+</ul>
+<h2>Where have you been???</h2>
+<p>One use of logging network traffic on an interface is to list what web sites/URLs have been requested across that interface. This would still be here even if the browsing history was deleted or if browsing anonymously. In a real situation such a log file could be massive so we can use TShark to filter and sort data to list unique web sites alphabetically. 
++ In an SSH session to pc0, start recording HTTP traffic:</p>
+<pre><code class="lang-bash">tshark -w /vagrant/pc0-eth0-traffic3.pcap -i eth0 -f &quot;tcp port 80&quot;</code></pre>
+<ul>
+<li><p>Using <code>wget</code> as before, make some requests for various web sites (e.g. www.bbc.co.uk, www.wit.ie, www.yahoo.ie).</p>
+</li>
+<li><p>Stop recording network data after about 5 wget requests. To get a sorted list of hosts and user agents, use the following command to read from the pcap file:</p>
+<pre><code class="lang-bash">tshark -r /vagrant/pc0-eth0-traffic3.pcap -Y http.request -T fields -e http.host -e http.user_agent | sort | uniq -c | sort -n</code></pre>
+<p>You should see a result similar to the following:</p>
+<pre><code class="lang-bash">$ tshark -r /vagrant/pc0-eth0-traffic3.pcap -Y http.request -T fields -e http.host -e http.user_agent | sort | uniq -c | sort -n
+    1 www.bbc.co.uk    Wget/1.15 (linux-gnu)
+    1 www.google.ie    Wget/1.15 (linux-gnu)
+    1 www.rte.ie    Wget/1.15 (linux-gnu)
+    1 www.wit.ie    Wget/1.15 (linux-gnu)</code></pre>
+<p>The above data gives the host and user-agent (requesting application). </p>
+</li>
+</ul>
+
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).on('keydown', function(e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+  $(document).ready(function() {
+  $('img').addClass('ui image');
+
+  $('.ui.embed').embed();
+
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass(
+        'ui basic segment',
+      );
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+        'ui blue ribbon label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+
+  $('.ui.menu .item').tab({
+    history: true,
+    historyType: 'hash',
+  });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+    .sidebar({ context: $('.pushable') })
+    .sidebar('setting', 'transition', 'slide out')
+    .sidebar('attach events', '#toc');
+});
+
+</script>
+</body>
+</html>

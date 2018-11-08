@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
+        type="text/css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
+        rel="stylesheet"/>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <style>
+    
+
+body {
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+  font-size:90%;
+  color: black;
+}
+
+p {
+  margin: 0.5em;
+}
+
+pre code {
+  font-family: "Monaco";
+  font-size: 100%;
+}
+
+img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin:10px;
+}
+
+h1, h2, h3 {
+  border-bottom:thin solid black;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
+h1 {
+  font-style:italic;
+  font-size:130%;
+}
+
+h2 {
+  font-size:110%;
+}
+
+h3 {
+  font-size:100%;
+}
+
+
+
+  </style>
+</head>
+
+<body>
+
+
+
+<div class="ui fixed top pointing inverted stackable menu labmenu">
+  <header class="header item">
+    <i id="toc" class="sitemap icon"></i>
+    
+      <a href="../index.html">  Virtualisation  </a>
+    
+  </header>
+  <div class="right tab-menu menu">
+    
+      <a class="item" data-tab="Vagrant and Virtualisation">
+        Vagrant and Virtualisation
+      </a>
+    
+      <a class="item" data-tab="01">
+        01
+      </a>
+    
+      <a class="item" data-tab="02">
+        02
+      </a>
+    
+      <a class="item" data-tab="03">
+        03
+      </a>
+    
+      <a class="item" data-tab="04">
+        04
+      </a>
+    
+  </div>
+</div>
+
+<div class="ui pushable">
+  <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    <br><br>
+    
+      
+        <a class="item"
+           href="/topic01-introducing-html/book-a/index.html">Lab-1.1: Editing HTML </a>
+      
+    
+      
+        <a class="item"
+           href="/topic01-introducing-html/book-b/index.html">Lab-1.2: HTML Structure </a>
+      
+    
+      
+        <a class="item"
+           href="/topic02-inctroducing-css/book/index.html">Lab-2 CSS Intro </a>
+      
+    
+      
+        <a class="item"
+           href="/topic03-box-model/book-a/index.html">Lab-3a Layout </a>
+      
+    
+      
+        <a class="item"
+           href="/topic03-box-model/book-b/index.html">Lab-3b Multicolumn </a>
+      
+    
+      
+        <a class="item"
+           href="/topic01a-intro-to-processing/book-1a/index.html">Lab-1a </a>
+      
+    
+      
+        <a class="item"
+           href="/topic01b-animate-your-drawings/book-1b/index.html">Lab-1b </a>
+      
+    
+      
+        <a class="item"
+           href="/topic02a-if-stmt-and-events/book/index.html">Lab-02a </a>
+      
+    
+      
+        <a class="item"
+           href="/topic-01-intro/book-a-glitch-intro/index.html">Lab-1 Glitch Intro </a>
+      
+    
+      
+        <a class="item"
+           href="/topic-01-intro/book-b-js-introduction/index.html">Lab-2 JS Intro </a>
+      
+    
+      
+        <a class="item"
+           href="/topic-02-controllers-and-views/book-a-gomix-playlist-1/index.html">Lab-3 Playlist 1 </a>
+      
+    
+      
+        <a class="item"
+           href="/topic-03-app-templates+views/book-a-gomix-playlist-2/index.html">Lab-4 Playlist 2 </a>
+      
+    
+      
+        <a class="item"
+           href="/topic-01/book-a/index.html">Home Network </a>
+      
+    
+      
+        <a class="item"
+           href="/topic-02/book-1-vagrant/index.html">Vagrant and Virtualisation </a>
+      
+    
+      
+        <a class="item"
+           href="/topic-03/book-1-packet-sniffing/index.html">Packet Sniffing using TShark </a>
+      
+    
+  </div>
+  <div class="pusher" tabindex="-1">
+    <div class="ui basic segment">
+      <br>
+      
+        <div class="ui tab segment lab" data-tab="Vagrant and Virtualisation">
+          <h1>Vagrant and Virtualisation</h1>
+<p>Vagrant · Virtualisation · SSH · Network</p>
+<h2>Objectives</h2>
+<ul>
+<li>Provision a virtual machine(VM) using Vagrant</li>
+<li>Connect to the VM using Secure shell(SSH)</li>
+<li>Create a file on the VM in the synced directory and edit it on the host</li>
+<li>Run a simple Java program on the VM</li>
+<li>Use common Linux network commands</li>
+</ul>
+<h2>Prerequesites</h2>
+<ul>
+<li>Virtualbox</li>
+<li>Vagrant</li>
+</ul>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="01">
+          <h1>Vagrant up!</h1>
+<h2>Command Line Interface(CLI)</h2>
+<p>The script examples in this lab use the Linux operating system. We will be using linux Command Line Interface(CLI) extensively and the term <strong>&#39;terminal&#39;</strong> is often used to describe a program that provides a CLI.</p>
+<h2>Vagrant</h2>
+<p>Vagrant&#39;s purpose is to manage and configure our virtual machines. In the preparatory lab, you created a Vagrant project from scratch using the &quot;<code>vagrant init</code>&quot; command. You will now modify the Vagrantfile to add more detail.</p>
+<p>The Vagrantfile describes the machine(s) used in the project, and how to configure and provision these machines.</p>
+<p>In the preparatory lab you created a directory called <em>vagrant-onsite-day</em>. Open the Vagrantfile in this directory and have a look at the contents. You&#39;ll see that it&#39;s filled with example code. Vagrantfiles are written in the programming language <a href="https://www.ruby-lang.org/en/">Ruby</a>. Don&#39;t worry, knowledge of the Ruby programming language is not necessary.</p>
+<p>Replace the contents of the file with the following:</p>
+<pre><code class="lang-ruby">VAGRANTFILE_API_VERSION = &quot;2&quot;
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+    config.vm.define &quot;pc0&quot; do |pc0|
+        pc0.vm.hostname = &quot;pc0&quot;
+        pc0.vm.network :private_network, ip: &quot;192.168.5.2&quot;
+    end
+    config.vm.box = &quot;frankwalsh/labvm&quot;
+    config.ssh.forward_x11 = true
+end</code></pre>
+<p>An IP address provides an identity to a networked device. Similar to your home or business address supplying that specific physical location with an identifiable address, devices on a network are differentiated from one another through IP addresses.
+The above script configures a virtual machine, &quot;pc0&quot;, with IP address of 192.168.5.2 in a virtual private network (think of a private network as a separate network contained inside the virtual environment). The <em>config.vm.box</em> variable describes the image used for the machine. In this case it&#39;s the same one used in the preparatory lab so you should have it downloaded already.</p>
+<p>Now open a terminal window in the root directory and enter the following command to start the VM:</p>
+<pre><code class="lang-bash">$ vagrant up</code></pre>
+<p>This will take a few minutes to complete if you haven&#39;t done the preliminary lab as the VM image will need to be downloaded the first time it&#39;s started. It will be much quicker for subsequent start ups. After it finishes, it will have created the following virtual environment on your machine:
+<img src="./img/network.png" alt="Virtual Network"></p>
+<p>All going well, we should now be able to &quot;see&quot; and connect to <em>pc0</em> using a remote
+shell (like ssh), using the dedicated IP address, just as if it was a &quot;real&quot; remote machine.</p>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="02">
+          <h2>Secure Shell (SSH)</h2>
+<p>Although you&#39;ve started a new virtual machine, you will not actually see anything since Vagrant runs the virtual machine without a Graphical User Interface (one good reason for this is that no UI requires less resources on the host machine, i.e. your laptop). To access the machine, we will use Secure Shell (SSH).</p>
+<p>SSH provides a secure channel connecting an SSH client with an SSH server. We will use it in one of it&#39;s most common usages.  remote command-line login and remote command execution.</p>
+<p>Vagrant has a built in command to start a SSH session with a virtual machine.</p>
+<p>Open a terminal window <strong>in the directory containing the Vagrantfile</strong> and enter:   </p>
+<pre><code class="lang-bash">vagrant ssh pc0</code></pre>
+<p>This will start a session with pc0. The session should start by displaying VM info:  </p>
+<pre><code class="lang-bash">$ vagrant ssh pc0
+Welcome to Ubuntu 14.04.1 LTS (GNU/Linux 3.13.0-37-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Mar  7 12:37:30 UTC 2018
+
+  System load:  0.04              Processes:           77
+  Usage of /:   3.8% of 39.34GB   Users logged in:     0
+  Memory usage: 25%               IP address for eth0: 10.0.2.15
+  Swap usage:   0%                IP address for eth1: 192.168.5.2
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+New release &#39;16.04.4 LTS&#39; available.
+Run &#39;do-release-upgrade&#39; to upgrade to it.
+
+
+Last login: Wed Mar  7 12:37:30 2018 from 10.0.2.2
+vagrant@pc0:~$</code></pre>
+<p>You are now logged in to the VM via SSH. This is a linux machine so you can use all the usual linux CLI commands to navigate, configure, change etc.</p>
+<ol>
+<li>Change directory to /vagrant<pre><code class="lang-bash">vagrant@pc0:~$ cd /vagrant
+vagrant@pc0:/vagrant$</code></pre>
+</li>
+</ol>
+<p>You are now in the defaults vagrant directory which shares with the root Vagrant project directory on the host machine. Check this is the case by running <code>ls</code>. You should see your Vagrantfile.</p>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="03">
+          <h2>Vagrantfile basics</h2>
+<p>Lets take a closer look at the Vagrantfile. Note the following:</p>
+<ol>
+<li>The location of the vagrantfile indicates the root directory of your vagrant project.</li>
+<li>The contents of the Vagrantfile describes the machine and resources you need to run your project.</li>
+<li>The Vagrantfile specifies what software to install and how you want to access it.</li>
+</ol>
+<p>As you&#39;ve already seen, Vagrant shares your project directory to the <em>/vagrant</em> directory in your guest machine.</p>
+<p>In the SSH session with <em>pc0</em>, type <strong><code>cd /vagrant</code></strong> at the command prompt to change directory to the shared directory:</p>
+<pre><code class="lang-bash">vagrant@pc0:~$ cd /vagrant</code></pre>
+<p>Now type <strong><code>ls</code></strong> at the command prompt to list the contents of the shared directory</p>
+<pre><code class="lang-bash">vagrant@pc0:/vagrant$ ls
+vagrantfile</code></pre>
+<p>You will see at the moment you only have one file in that directory at the moment.</p>
+<p>Type <strong><code>touch HelloWorld.java</code></strong> at the command promu to create a new, empty, file called &#39;HelloWorld.java&#39;</p>
+<pre><code class="lang-bash">vagrant@pc0:/vagrant$ touch HelloWorld.java
+vagrant@pc0:/vagrant$ ls
+HelloWorld.java vagrantfile
+vagrant@pc0:/vagrant$</code></pre>
+<p>Now close the vagrant ssh session using the &#39;exit&#39; command:</p>
+<pre><code class="lang-bash">$ exit</code></pre>
+<p>Have a look at the the contents the your project directory <strong>on your host machine</strong>. You should see <em>HelloWorld.java</em> that you created in pc0. Using an editor on your host machine, add the following code to the file and save.</p>
+<pre><code class="lang-java">public class HelloWorld {
+
+    public static void main(String[] args) {
+        // Prints &quot;Hello, World&quot; to the terminal window.
+        System.out.println(&quot;Hello, World&quot;);
+    }
+
+}</code></pre>
+<p>As you know from programming module, we need to compile the above source code to byte code (i.e. HelloWorld.class) before we can run it.
+Java 8 has already been installed on the VM box you are using. Let us now compile and run some source code.</p>
+<p>Open a new SSH session with pc0 and enter the following commands in the SSH session to compile and run HelloWorld.java:</p>
+<pre><code class="lang-shell">vagrant@pc0:/vagrant$ javac HelloWorld.java
+vagrant@pc0:/vagrant$ java HelloWorld
+Hello, World</code></pre>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="04">
+          <h1>The Network</h1>
+<p>Lets have a look at the environment you&#39;ve created from a network perspective...</p>
+<p>If don&#39;t already have a SSH session open, SSH into <em>pc0</em> by opening a terminal window in your <em>vagrant-onsite-day</em> directory and enter  &quot;vagrant ssh&quot; at the command prompt.</p>
+<p>Now lets explore some Linux terminal commands that are useful for networking.</p>
+<h2>ifconfig</h2>
+<p>In order for a device to connect to a network, it needs a network interface. The <strong>ifconfig</strong> utility  provides a quick and easy way to view network interface information on a machine.<br>In your ssh session, type <strong><code>ifconfig</code></strong> to view the status of all currently active network interfaces, including their names. You should see something similar to the following:
+<img src="./img/ifconfig.png" alt="ifconfig - VM"></p>
+<p>Note some significant information here, namely the interface names and their IP(Internet Protocol) addresses. Note that the interface <em>eth1</em> with ip address(inet addr) 192.168.5.2 is what you specified in the Vagrantfile.</p>
+<p>Now open a new, separate terminal window on the host machine and type <strong><code>ifconfig</code></strong> or <strong><code>ipconfig /all</code></strong>(depending on your host OS) to view the status of all currently active network interfaces on your host. You should see something similar to this:
+<img src="./img/ifconfig-host.png" alt="ifconfig - Host">
+You should be able to see the Virtualbox Host-Only adapter as indicated in the above image with an IP address of 192.168.5.1.</p>
+<h2>Who am I?</h2>
+<p>Just in case you forget who you are (as in what user you&#39;re currently working as on a machine) you can use the <strong><code>whoami</code></strong> command. Type <strong><code>whoami</code></strong> at the command prompt and it should well you you&#39;re vagrant (as that&#39;s who you logged in as with the ssh session).<br><img src="./img/whoami.png" alt="whoami">  </p>
+<h2>hostname</h2>
+<p>The hostname command lets you know what host name is being used to identify you in the network. In the ssh session, type <strong><code>hostname</code></strong> at the  command prompt to see the hostname of your machine. As you can see, it&#39;s what we specified in the Vagrantfile, pc0.<br><img src="./img/hostname.png" alt="Host Name">  </p>
+<h2>PING</h2>
+<p>PING(Packet INternet Groper) sends ECHO_REQUEST packets to the IP address you specify. It’s a handy way to see whether your machine can communicate with the Internet or another machine. However many machines are configured <strong>not</strong> to respond to pings so, if you don&#39;t get a response, it doesn&#39;t  mean the machine is not connected and available for communication.
+In you ssh session with the <em>pc0</em>, let&#39;s ping the host machine (i.e. your laptop). Vagrant would have created a <em>virtual</em> network interface with the address 192.168.5.1.
+In the SSH session, type <strong><code>ping 192.168.5.1</code></strong> to see of it connects. You should see responses similar to the following:<br><img src="./img/ping1.png" alt="Pinging Host Machine">  </p>
+<p>You can also use Ping to check if you can connect to the internet. Type <strong><code>ping google.ie</code></strong> to see if you can get a response from Google. This time, you should see something like this:<br><img src="./img/ping2.png" alt="Pinging Google">
+Notice that you used a <strong>domain name</strong> this time. In this case, your machine would have used Domain Name System (DNS) to get the IP address for a &quot;google.ie&quot;. As you can see, in this example the IP address is <em>209.85.203.94</em> and we got a successful reply so the virtual machine, pc0, is connected to the internet!<br>We&#39;ll cover more about DNS in future coursework.</p>
+<h2>Tracepath</h2>
+<p>Tracepath is a network troubleshooting utility which shows the number of &quot;hops&quot; taken by network &quot;packets&quot; to reach a destination and also determine the travelling path through the network. In the SSH session, type <strong><code>tracepath www.tssg.ie</code></strong> to see the path though the network to the tssg web site. You should see responses similar to the following:<br><img src="./img/tracepath1.png" alt="TracePath">  </p>
+<h2>Route</h2>
+<p>Most connected machines use routing tables to compute the next hop for a packet. you can use the <strong><code>route</code></strong> command to show the local ip routing table for the machine pc0. To see default routing table in Linux, type <strong><code>route</code></strong> at the command prompt.
+<img src="./img/route.png" alt="Route"><br>You will see three entries. The default entry indicates the &quot;default gateway&quot; address. This is the destination address where all traffic will be sent if the destination is not on any of the other connected routes (this is analogous to the &quot;all other routes&quot; road signs you might see on the road). The other two entries relate to the networks connected to interface eth0 and eth1. Run the ifconfig command again and examine this in relation to the routing table. Based on this, we can say the any network traffic from this machine to a destination address starting with 192.168.5.* will be routed(sent out) to eth1, everything else will be on eth0.</p>
+<h2>Exercises</h2>
+<p>So you&#39;ve all connected to the Wifi with your host machines So you should be able to ping each others host machines from your virtual machine, pc0. Try the following:</p>
+<ul>
+<li>Determine the ip address of your host machine on the Wifi network.</li>
+<li>Ask your neighbour (or help them) what their IP address is.</li>
+<li>SSH into your virtual machine (pc0) and ping them. All things going well you should see a successful response.</li>
+<li>Also, do a tracepath using a neighbours IP address. Does it complete successfully and how many hops does it take?</li>
+</ul>
+
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).on('keydown', function(e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+  $(document).ready(function() {
+  $('img').addClass('ui image');
+
+  $('.ui.embed').embed();
+
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass(
+        'ui basic segment',
+      );
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+        'ui blue ribbon label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+
+  $('.ui.menu .item').tab({
+    history: true,
+    historyType: 'hash',
+  });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+    .sidebar({ context: $('.pushable') })
+    .sidebar('setting', 'transition', 'slide out')
+    .sidebar('attach events', '#toc');
+});
+
+</script>
+</body>
+</html>
