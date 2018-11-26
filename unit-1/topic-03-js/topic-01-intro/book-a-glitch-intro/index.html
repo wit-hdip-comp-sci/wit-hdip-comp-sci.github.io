@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
-        type="text/css">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
-        rel="stylesheet"/>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  <style>
-    
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
+          type="text/css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
+          rel="stylesheet"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      
 
 body {
   font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
@@ -66,141 +66,169 @@ h3 {
 
 
 
-  </style>
-</head>
+      
 
-<body>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.footer {
+  background: white;
+  text-align: right;
+}
+.content {
+  flex: 1;
+  overflow: auto;
+}
 
 
 
-<div class="ui fixed top pointing inverted stackable menu labmenu">
-  <header class="header item">
-    <i id="toc" class="sitemap icon"></i>
-    
-      <a href="../index.html"> 1: Introduction to Glitch  </a>
-    
-  </header>
-  <div class="right tab-menu menu">
-    
-      <a class="item" data-tab="Lab-1 Glitch Intro">
-        Lab-1 Glitch Intro
-      </a>
-    
-      <a class="item" data-tab="01">
-        01
-      </a>
-    
-      <a class="item" data-tab="02">
-        02
-      </a>
-    
-      <a class="item" data-tab="03">
-        03
-      </a>
-    
-      <a class="item" data-tab="04">
-        04
-      </a>
-    
-      <a class="item" data-tab="Exercises">
-        Exercises
-      </a>
-    
+    </style>
+  </head>
+
+  <body class="uk-background-muted">
+    <div class="wrapper">
+      <div class="content">
+        <div style="height:1000px;">
+          
+  
+
+  <div class="ui fixed top pointing inverted stackable menu labmenu">
+    <header class="header item">
+      <i id="toc" class="sitemap icon"></i>
+      
+        <a href="../index.html"> 1: Introduction to Glitch  </a>
+      
+    </header>
+    <div class="right tab-menu menu">
+      
+        <a class="item" data-tab="Lab-1 Glitch Intro">
+          Lab-1 Glitch Intro
+        </a>
+      
+        <a class="item" data-tab="01">
+          01
+        </a>
+      
+        <a class="item" data-tab="02">
+          02
+        </a>
+      
+        <a class="item" data-tab="03">
+          03
+        </a>
+      
+        <a class="item" data-tab="04">
+          04
+        </a>
+      
+        <a class="item" data-tab="Exercises">
+          Exercises
+        </a>
+      
+    </div>
   </div>
-</div>
 
-<div class="ui pushable">
-  <div class="ui inverted labeled icon left inline vertical sidebar menu">
-    <br><br>
-    
+
+  
+
+  <div class="ui pushable">
+    <div class="ui inverted labeled icon left inline vertical sidebar menu">
+      <br><br>
       
-        <a class="item"
-           href="/topic01-introducing-html/book-a/index.html">Lab-1.1: Editing HTML </a>
+        
+          <a class="item"
+             href="/topic01-introducing-html/book-a/index.html">Lab-1.1: Editing HTML </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic01-introducing-html/book-b/index.html">Lab-1.2: HTML Structure </a>
+        
       
-        <a class="item"
-           href="/topic01-introducing-html/book-b/index.html">Lab-1.2: HTML Structure </a>
+        
+          <a class="item"
+             href="/topic02-inctroducing-css/book/index.html">Lab-2 CSS Intro </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic03-box-model/book-a/index.html">Lab-3a Layout </a>
+        
       
-        <a class="item"
-           href="/topic02-inctroducing-css/book/index.html">Lab-2 CSS Intro </a>
+        
+          <a class="item"
+             href="/topic03-box-model/book-b/index.html">Lab-3b Multicolumn </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic01a-intro-to-processing/book-1a/index.html">Lab-1a </a>
+        
       
-        <a class="item"
-           href="/topic03-box-model/book-a/index.html">Lab-3a Layout </a>
+        
+          <a class="item"
+             href="/topic01b-animate-your-drawings/book-1b/index.html">Lab-1b </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic02a-if-stmt-and-events/book/index.html">Lab-02a </a>
+        
       
-        <a class="item"
-           href="/topic03-box-model/book-b/index.html">Lab-3b Multicolumn </a>
+        
+          <a class="item"
+             href="/topic-01-intro/book-a-glitch-intro/index.html">Lab-1 Glitch Intro </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic-01-intro/book-b-js-introduction/index.html">Lab-2 JS Intro </a>
+        
       
-        <a class="item"
-           href="/topic01a-intro-to-processing/book-1a/index.html">Lab-1a </a>
+        
+          <a class="item"
+             href="/topic-02-controllers-and-views/book-a-gomix-playlist-1/index.html">Lab-3 Playlist 1 </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic-03-app-templates+views/book-a-gomix-playlist-2/index.html">Lab-4 Playlist 2 </a>
+        
       
-        <a class="item"
-           href="/topic01b-animate-your-drawings/book-1b/index.html">Lab-1b </a>
+        
+          <a class="item"
+             href="/topic-01/book-a/index.html">Home Network </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic-02/book-1-vagrant/index.html">Vagrant and Virtualisation </a>
+        
       
-        <a class="item"
-           href="/topic02a-if-stmt-and-events/book/index.html">Lab-02a </a>
+        
+          <a class="item"
+             href="/topic-03/book-1-packet-sniffing/index.html">Packet Sniffing using TShark </a>
+        
       
-    
-      
-        <a class="item"
-           href="/topic-01-intro/book-a-glitch-intro/index.html">Lab-1 Glitch Intro </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-01-intro/book-b-js-introduction/index.html">Lab-2 JS Intro </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-02-controllers-and-views/book-a-gomix-playlist-1/index.html">Lab-3 Playlist 1 </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-03-app-templates+views/book-a-gomix-playlist-2/index.html">Lab-4 Playlist 2 </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-01/book-a/index.html">Home Network </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-02/book-1-vagrant/index.html">Vagrant and Virtualisation </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-03/book-1-packet-sniffing/index.html">Packet Sniffing using TShark </a>
-      
-    
-  </div>
-  <div class="pusher" tabindex="-1">
-    <div class="ui basic segment">
-      <br>
-      
-        <div class="ui tab segment lab" data-tab="Lab-1 Glitch Intro">
-          <h1>Objectives</h1>
+    </div>
+    <div class="pusher" tabindex="-1">
+      <div class="ui basic segment">
+        <br>
+        
+          <div class="ui tab segment lab" data-tab="Lab-1 Glitch Intro">
+            <h1>Objectives</h1>
 <p>Create, modify and view your first Gomix project.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="01">
-          <h1>Gomix Setup</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="01">
+            <h1>Gomix Setup</h1>
 <p>If you do not have a github account, create one now:</p>
 <ul>
 <li><a href="https://github.com">https://github.com</a></li>
@@ -221,10 +249,10 @@ h3 {
 <p>Do this now with someone also doing the lab - perhaps you can pair up with someone via the slack channel?</p>
 <p>Verify that you each see different lists depending on what has been entered. Enter some &#39;dreams&#39; into you someone else&#39;s app.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="02">
-          <h1>Project Structure and Editing</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="02">
+            <h1>Project Structure and Editing</h1>
 <p>Back in the <code>source</code> view, look at the project structure in more detail. Click on the <code>Markdown</code> button on the top - this will switch to edit mode:</p>
 <p><img src="img/03.png" alt=""></p>
 <p>You can edit this file now - it is documentation on your new app. Toggle the markdown button to switch back to preview mode.</p>
@@ -262,10 +290,10 @@ var dreams = [
 <p><img src="img/07.png" alt=""></p>
 <p>Experiment with making small changes in <code>server.js</code> now and keep an eye on the logs. Also, notice that if the changes you make are not correct syntax, this should be highlighted in the editor.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="03">
-          <h1>Configuring the Project</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="03">
+            <h1>Configuring the Project</h1>
 <p>The project name can be changed by directly entering a new name on the sidebar:</p>
 <p><img src="img/08.png" alt=""></p>
 <p>This will also change the project url, so if you have shared the app you will have to re-share the new url.</p>
@@ -277,10 +305,10 @@ var dreams = [
 <p>Experiment with of all of these options.</p>
 <p>For <code>Export to github</code>, the repository must already exist in your account. The project will, however, be on a different branch from master, so might not be visible at first unless you switch branches.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="04">
-          <h1>Run Offline</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="04">
+            <h1>Run Offline</h1>
 <p>On your workstation, install Node.js:</p>
 <ul>
 <li><a href="https://nodejs.org">https://nodejs.org</a> </li>
@@ -310,10 +338,10 @@ Your app is listening on port 4000</code></pre>
 <p>If you open a browser now on <a href="http://localhost:4000">http://localhost:4000</a> your application should be running locally:</p>
 <p><img src="img/13.png" alt=""></p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="Exercises">
-          <h1>Exercises</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="Exercises">
+            <h1>Exercises</h1>
 <h2>Exercise 1: Semantic UI</h2>
 <p>Modify index.html to include the latest semantic ui libraries:</p>
 <h3>Step 1:</h3>
@@ -337,14 +365,16 @@ Your app is listening on port 4000</code></pre>
 <h2>Exercise 3:</h2>
 <p>If you completed the above tasks, download the the app again and run it locally (see step 4).</p>
 
-        </div>
-      
+          </div>
+        
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-  $(document).on('keydown', function(e) {
+
+
+  <script>
+    $(document).on('keydown', function(e) {
   e = e || window.event;
   var nextTab;
   switch (e.which || e.keyCode) {
@@ -364,7 +394,7 @@ Your app is listening on port 4000</code></pre>
   }
 });
 
-  $(document).ready(function() {
+    $(document).ready(function() {
   $('img').addClass('ui image');
 
   $('.ui.embed').embed();
@@ -397,6 +427,16 @@ Your app is listening on port 4000</code></pre>
     .sidebar('attach events', '#toc');
 });
 
-</script>
-</body>
+  </script>
+
+
+        </div>
+      </div>
+      <div class="footer"> <p> Powered by <a
+          href="https://github.com/edeleastar/tutors-ts">tutors-ts.</a>
+         </p>
+      </div>
+    </div>
+  </body>
+
 </html>

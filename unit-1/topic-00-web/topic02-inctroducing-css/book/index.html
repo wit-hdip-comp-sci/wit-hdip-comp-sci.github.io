@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
-        type="text/css">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
-        rel="stylesheet"/>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  <style>
-    
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
+          type="text/css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
+          rel="stylesheet"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      
 
 body {
   font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
@@ -66,157 +66,185 @@ h3 {
 
 
 
-  </style>
-</head>
+      
 
-<body>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.footer {
+  background: white;
+  text-align: right;
+}
+.content {
+  flex: 1;
+  overflow: auto;
+}
 
 
 
-<div class="ui fixed top pointing inverted stackable menu labmenu">
-  <header class="header item">
-    <i id="toc" class="sitemap icon"></i>
-    
-      <a href="../index.html"> 2: Introducing CSS  </a>
-    
-  </header>
-  <div class="right tab-menu menu">
-    
-      <a class="item" data-tab="Lab-2 CSS Intro">
-        Lab-2 CSS Intro
-      </a>
-    
-      <a class="item" data-tab="01">
-        01
-      </a>
-    
-      <a class="item" data-tab="02">
-        02
-      </a>
-    
-      <a class="item" data-tab="03">
-        03
-      </a>
-    
-      <a class="item" data-tab="04">
-        04
-      </a>
-    
-      <a class="item" data-tab="05">
-        05
-      </a>
-    
-      <a class="item" data-tab="06">
-        06
-      </a>
-    
-      <a class="item" data-tab="07">
-        07
-      </a>
-    
-      <a class="item" data-tab="08">
-        08
-      </a>
-    
-      <a class="item" data-tab="Exercises">
-        Exercises
-      </a>
-    
+    </style>
+  </head>
+
+  <body class="uk-background-muted">
+    <div class="wrapper">
+      <div class="content">
+        <div style="height:1000px;">
+          
+  
+
+  <div class="ui fixed top pointing inverted stackable menu labmenu">
+    <header class="header item">
+      <i id="toc" class="sitemap icon"></i>
+      
+        <a href="../index.html"> 2: Introducing CSS  </a>
+      
+    </header>
+    <div class="right tab-menu menu">
+      
+        <a class="item" data-tab="Lab-2 CSS Intro">
+          Lab-2 CSS Intro
+        </a>
+      
+        <a class="item" data-tab="01">
+          01
+        </a>
+      
+        <a class="item" data-tab="02">
+          02
+        </a>
+      
+        <a class="item" data-tab="03">
+          03
+        </a>
+      
+        <a class="item" data-tab="04">
+          04
+        </a>
+      
+        <a class="item" data-tab="05">
+          05
+        </a>
+      
+        <a class="item" data-tab="06">
+          06
+        </a>
+      
+        <a class="item" data-tab="07">
+          07
+        </a>
+      
+        <a class="item" data-tab="08">
+          08
+        </a>
+      
+        <a class="item" data-tab="Exercises">
+          Exercises
+        </a>
+      
+    </div>
   </div>
-</div>
 
-<div class="ui pushable">
-  <div class="ui inverted labeled icon left inline vertical sidebar menu">
-    <br><br>
-    
+
+  
+
+  <div class="ui pushable">
+    <div class="ui inverted labeled icon left inline vertical sidebar menu">
+      <br><br>
       
-        <a class="item"
-           href="/topic01-introducing-html/book-a/index.html">Lab-1.1: Editing HTML </a>
+        
+          <a class="item"
+             href="/topic01-introducing-html/book-a/index.html">Lab-1.1: Editing HTML </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic01-introducing-html/book-b/index.html">Lab-1.2: HTML Structure </a>
+        
       
-        <a class="item"
-           href="/topic01-introducing-html/book-b/index.html">Lab-1.2: HTML Structure </a>
+        
+          <a class="item"
+             href="/topic02-inctroducing-css/book/index.html">Lab-2 CSS Intro </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic03-box-model/book-a/index.html">Lab-3a Layout </a>
+        
       
-        <a class="item"
-           href="/topic02-inctroducing-css/book/index.html">Lab-2 CSS Intro </a>
+        
+          <a class="item"
+             href="/topic03-box-model/book-b/index.html">Lab-3b Multicolumn </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic01a-intro-to-processing/book-1a/index.html">Lab-1a </a>
+        
       
-        <a class="item"
-           href="/topic03-box-model/book-a/index.html">Lab-3a Layout </a>
+        
+          <a class="item"
+             href="/topic01b-animate-your-drawings/book-1b/index.html">Lab-1b </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic02a-if-stmt-and-events/book/index.html">Lab-02a </a>
+        
       
-        <a class="item"
-           href="/topic03-box-model/book-b/index.html">Lab-3b Multicolumn </a>
+        
+          <a class="item"
+             href="/topic-01-intro/book-a-glitch-intro/index.html">Lab-1 Glitch Intro </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic-01-intro/book-b-js-introduction/index.html">Lab-2 JS Intro </a>
+        
       
-        <a class="item"
-           href="/topic01a-intro-to-processing/book-1a/index.html">Lab-1a </a>
+        
+          <a class="item"
+             href="/topic-02-controllers-and-views/book-a-gomix-playlist-1/index.html">Lab-3 Playlist 1 </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic-03-app-templates+views/book-a-gomix-playlist-2/index.html">Lab-4 Playlist 2 </a>
+        
       
-        <a class="item"
-           href="/topic01b-animate-your-drawings/book-1b/index.html">Lab-1b </a>
+        
+          <a class="item"
+             href="/topic-01/book-a/index.html">Home Network </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic-02/book-1-vagrant/index.html">Vagrant and Virtualisation </a>
+        
       
-        <a class="item"
-           href="/topic02a-if-stmt-and-events/book/index.html">Lab-02a </a>
+        
+          <a class="item"
+             href="/topic-03/book-1-packet-sniffing/index.html">Packet Sniffing using TShark </a>
+        
       
-    
-      
-        <a class="item"
-           href="/topic-01-intro/book-a-glitch-intro/index.html">Lab-1 Glitch Intro </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-01-intro/book-b-js-introduction/index.html">Lab-2 JS Intro </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-02-controllers-and-views/book-a-gomix-playlist-1/index.html">Lab-3 Playlist 1 </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-03-app-templates+views/book-a-gomix-playlist-2/index.html">Lab-4 Playlist 2 </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-01/book-a/index.html">Home Network </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-02/book-1-vagrant/index.html">Vagrant and Virtualisation </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-03/book-1-packet-sniffing/index.html">Packet Sniffing using TShark </a>
-      
-    
-  </div>
-  <div class="pusher" tabindex="-1">
-    <div class="ui basic segment">
-      <br>
-      
-        <div class="ui tab segment lab" data-tab="Lab-2 CSS Intro">
-          <h1>Objectives</h1>
+    </div>
+    <div class="pusher" tabindex="-1">
+      <div class="ui basic segment">
+        <br>
+        
+          <div class="ui tab segment lab" data-tab="Lab-2 CSS Intro">
+            <h1>Objectives</h1>
 <p>inheritance · classes · fonts · colours · indentation · best practices </p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="01">
-          <h1>Setup</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="01">
+            <h1>Setup</h1>
 <p>For some of the labs, we would like to build on a foundation established from the previous weeks work. However, we might find it useful to keep the project separate, so the earlier labs are preserved as we left them (in case we wish to revert to them). Normally this would be the task of a revision control system such as git or subversion. For the moment we will just duplicate the projects</p>
 <p>You should have the files created from last week. If you do then make a copy of the Lab1 folder and name the new copy Lab2.</p>
 <p>However, if you did not save the files or missed the class, here is the archive here of the completed lab (with exercises):</p>
@@ -273,10 +301,10 @@ If we are viewing the deals web page stored in the deals folder, does that folde
 &lt;/html&gt;</code></pre>
 <p>On the index.html page add a link to the deals.html page. Test the link to make sure you have written the path correctly.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="02">
-          <h1>CSS Inheritance</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="02">
+            <h1>CSS Inheritance</h1>
 <p>Currently our CSS file looks like this:</p>
 <pre><code class="lang-css">h1, h2
 {
@@ -319,10 +347,10 @@ h1
 }</code></pre>
 <p>Have a close look at the resulting page. What type of font is used by the headings? What type for the paragraphs? Can you explain the difference? Comment out the body font rule again (as we did above). What is the effect?</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="03">
-          <h1>CSS Classes</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="03">
+            <h1>CSS Classes</h1>
 <p>Open the deals.html file.</p>
 <p>How would we style each heading 2 separately so that each bundle has a different colour text? Styling the <code>&lt;h2&gt;</code> element means that all <code>&lt;h2&gt;</code> elements are styled in the same way. We can define a class of elements, and then apply styles to any element that belongs to that class.</p>
 <p>Go to the first h2 which holds the business bundle. This text we want to display as red. Add an attribute called class, with an id &quot;special&quot; to the <code>&lt;h2&gt;</code> element as below:</p>
@@ -381,10 +409,10 @@ p
   color: red;
 }</code></pre>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="04">
-          <h1>Fonts</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="04">
+            <h1>Fonts</h1>
 <h3>Font families</h3>
 <p>Each font family contains a set of fonts that share common characteristics. There are five font familys: sans-serif, serif, monospace, cursive, and fantasy. Each family includes a large set of fonts. Fonts are not consistently available from one computer to another. The available fonts depends on the operating system as well as the fonts and applications that a user has installed. Here&#39;s a an example of how to use font-family:</p>
 <pre><code class="lang-css">body
@@ -453,10 +481,10 @@ h2
 }</code></pre>
 <p>Experiment with changing the headings for the web site so that the bold is changed to normal weight. Add the rule to your CSS file and reload the web site. Once you have seen the difference in the headings, change it back to bold.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="05">
-          <h1>Colours</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="05">
+            <h1>Colours</h1>
 <p>Web colours are specified in terms of how much red, green, and blue make up the colour. You specify the amount of each colour from 0 to 100% and then add them all together to arrive at a final colour.</p>
 <p>You can use the names of colours, but CSS defines the names of only 17 colours. That number limits the expressiveness of your pages. By specifying colours in red, green and blue, you can have access to sixteen million colours.</p>
 <h2>Specifying Colour using colour names</h2>
@@ -486,10 +514,10 @@ h2
 <p>Try out these colours on the web site. </p>
 <p>We would like to keep the silver colour for the background of this website.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="06">
-          <h1>Font &amp; Colour CSS</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="06">
+            <h1>Font &amp; Colour CSS</h1>
 <p>In your current style.css, change your CSS file so it now contains the following:</p>
 <pre><code class="lang-css">body
 {
@@ -531,10 +559,10 @@ p
 <p>This property allows us to specify the line height between each line. Like other font-related properties, you can specify the height in pixels, or using an em or percentage value that&#39;s relative to the font size. Save your CSS file and reload your web pages to see the change.</p>
 <p>Try a few different line heights like 200%, .5em, and 20px to see the effect. Change the height back to 1.6em when you are finished.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="07">
-          <h1>More Content</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="07">
+            <h1>More Content</h1>
 <p>We will rework the apps.html  page with some more content to illustrate some interesting CSS rules. Replace the first paragraph with the following content:</p>
 <pre><code class="lang-html">  &lt;!DOCTYPE HTML&gt;
 &lt;html&gt;
@@ -572,10 +600,10 @@ p
 <p>If all this goes according to plan,  the app page should now look something like this:</p>
 <p><img src="./img/06.png" alt=""></p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="08">
-          <h1>Coding Best Practices</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="08">
+            <h1>Coding Best Practices</h1>
 <p>We should carefully inspect our html and verify that we are laying it out correctly, and in particular that we are obeying consistent indentation rules in the structure of the html itself.</p>
 <p>Indentation is simply a consistent placement of spaces before each element, such that it flows in an ordered manner reflecting the opening/closing of tags. We prefer to use 2 spaces for each &#39;level&#39;.</p>
 <h3>Example Inconsistent indentation:</h3>
@@ -620,10 +648,10 @@ p
 <p>It is likely that your indentation will not look like the below, so take the opportunity now to line up all elements consistently. This can be tedious, and there are tools to do this automatically, but do it manually for the moment.</p>
 <p><img src="./img/12.png" alt=""></p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="Exercises">
-          <h1>Exercises</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="Exercises">
+            <h1>Exercises</h1>
 <h2>Solution</h2>
 <p>This is a solution to the lab:</p>
 <ul>
@@ -646,14 +674,16 @@ Apply what you have learnt to the directions page in your web site.</p>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">https://developer.mozilla.org/en-US/docs/Web/CSS/Reference</a></li>
 </ul>
 
-        </div>
-      
+          </div>
+        
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-  $(document).on('keydown', function(e) {
+
+
+  <script>
+    $(document).on('keydown', function(e) {
   e = e || window.event;
   var nextTab;
   switch (e.which || e.keyCode) {
@@ -673,7 +703,7 @@ Apply what you have learnt to the directions page in your web site.</p>
   }
 });
 
-  $(document).ready(function() {
+    $(document).ready(function() {
   $('img').addClass('ui image');
 
   $('.ui.embed').embed();
@@ -706,6 +736,16 @@ Apply what you have learnt to the directions page in your web site.</p>
     .sidebar('attach events', '#toc');
 });
 
-</script>
-</body>
+  </script>
+
+
+        </div>
+      </div>
+      <div class="footer"> <p> Powered by <a
+          href="https://github.com/edeleastar/tutors-ts">tutors-ts.</a>
+         </p>
+      </div>
+    </div>
+  </body>
+
 </html>

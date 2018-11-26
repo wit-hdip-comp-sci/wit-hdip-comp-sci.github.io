@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
-        type="text/css">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
-        rel="stylesheet"/>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  <style>
-    
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
+          type="text/css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
+          rel="stylesheet"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      
 
 body {
   font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
@@ -66,157 +66,185 @@ h3 {
 
 
 
-  </style>
-</head>
+      
 
-<body>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.footer {
+  background: white;
+  text-align: right;
+}
+.content {
+  flex: 1;
+  overflow: auto;
+}
 
 
 
-<div class="ui fixed top pointing inverted stackable menu labmenu">
-  <header class="header item">
-    <i id="toc" class="sitemap icon"></i>
-    
-      <a href="../index.html"> 3: The Box Model  </a>
-    
-  </header>
-  <div class="right tab-menu menu">
-    
-      <a class="item" data-tab="Lab-3a Layout">
-        Lab-3a Layout
-      </a>
-    
-      <a class="item" data-tab="01">
-        01
-      </a>
-    
-      <a class="item" data-tab="02">
-        02
-      </a>
-    
-      <a class="item" data-tab="03">
-        03
-      </a>
-    
-      <a class="item" data-tab="04">
-        04
-      </a>
-    
-      <a class="item" data-tab="05">
-        05
-      </a>
-    
-      <a class="item" data-tab="06">
-        06
-      </a>
-    
-      <a class="item" data-tab="07">
-        07
-      </a>
-    
-      <a class="item" data-tab="08">
-        08
-      </a>
-    
-      <a class="item" data-tab="Exercises">
-        Exercises
-      </a>
-    
+    </style>
+  </head>
+
+  <body class="uk-background-muted">
+    <div class="wrapper">
+      <div class="content">
+        <div style="height:1000px;">
+          
+  
+
+  <div class="ui fixed top pointing inverted stackable menu labmenu">
+    <header class="header item">
+      <i id="toc" class="sitemap icon"></i>
+      
+        <a href="../index.html"> 3: The Box Model  </a>
+      
+    </header>
+    <div class="right tab-menu menu">
+      
+        <a class="item" data-tab="Lab-3a Layout">
+          Lab-3a Layout
+        </a>
+      
+        <a class="item" data-tab="01">
+          01
+        </a>
+      
+        <a class="item" data-tab="02">
+          02
+        </a>
+      
+        <a class="item" data-tab="03">
+          03
+        </a>
+      
+        <a class="item" data-tab="04">
+          04
+        </a>
+      
+        <a class="item" data-tab="05">
+          05
+        </a>
+      
+        <a class="item" data-tab="06">
+          06
+        </a>
+      
+        <a class="item" data-tab="07">
+          07
+        </a>
+      
+        <a class="item" data-tab="08">
+          08
+        </a>
+      
+        <a class="item" data-tab="Exercises">
+          Exercises
+        </a>
+      
+    </div>
   </div>
-</div>
 
-<div class="ui pushable">
-  <div class="ui inverted labeled icon left inline vertical sidebar menu">
-    <br><br>
-    
+
+  
+
+  <div class="ui pushable">
+    <div class="ui inverted labeled icon left inline vertical sidebar menu">
+      <br><br>
       
-        <a class="item"
-           href="/topic01-introducing-html/book-a/index.html">Lab-1.1: Editing HTML </a>
+        
+          <a class="item"
+             href="/topic01-introducing-html/book-a/index.html">Lab-1.1: Editing HTML </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic01-introducing-html/book-b/index.html">Lab-1.2: HTML Structure </a>
+        
       
-        <a class="item"
-           href="/topic01-introducing-html/book-b/index.html">Lab-1.2: HTML Structure </a>
+        
+          <a class="item"
+             href="/topic02-inctroducing-css/book/index.html">Lab-2 CSS Intro </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic03-box-model/book-a/index.html">Lab-3a Layout </a>
+        
       
-        <a class="item"
-           href="/topic02-inctroducing-css/book/index.html">Lab-2 CSS Intro </a>
+        
+          <a class="item"
+             href="/topic03-box-model/book-b/index.html">Lab-3b Multicolumn </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic01a-intro-to-processing/book-1a/index.html">Lab-1a </a>
+        
       
-        <a class="item"
-           href="/topic03-box-model/book-a/index.html">Lab-3a Layout </a>
+        
+          <a class="item"
+             href="/topic01b-animate-your-drawings/book-1b/index.html">Lab-1b </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic02a-if-stmt-and-events/book/index.html">Lab-02a </a>
+        
       
-        <a class="item"
-           href="/topic03-box-model/book-b/index.html">Lab-3b Multicolumn </a>
+        
+          <a class="item"
+             href="/topic-01-intro/book-a-glitch-intro/index.html">Lab-1 Glitch Intro </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic-01-intro/book-b-js-introduction/index.html">Lab-2 JS Intro </a>
+        
       
-        <a class="item"
-           href="/topic01a-intro-to-processing/book-1a/index.html">Lab-1a </a>
+        
+          <a class="item"
+             href="/topic-02-controllers-and-views/book-a-gomix-playlist-1/index.html">Lab-3 Playlist 1 </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic-03-app-templates+views/book-a-gomix-playlist-2/index.html">Lab-4 Playlist 2 </a>
+        
       
-        <a class="item"
-           href="/topic01b-animate-your-drawings/book-1b/index.html">Lab-1b </a>
+        
+          <a class="item"
+             href="/topic-01/book-a/index.html">Home Network </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic-02/book-1-vagrant/index.html">Vagrant and Virtualisation </a>
+        
       
-        <a class="item"
-           href="/topic02a-if-stmt-and-events/book/index.html">Lab-02a </a>
+        
+          <a class="item"
+             href="/topic-03/book-1-packet-sniffing/index.html">Packet Sniffing using TShark </a>
+        
       
-    
-      
-        <a class="item"
-           href="/topic-01-intro/book-a-glitch-intro/index.html">Lab-1 Glitch Intro </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-01-intro/book-b-js-introduction/index.html">Lab-2 JS Intro </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-02-controllers-and-views/book-a-gomix-playlist-1/index.html">Lab-3 Playlist 1 </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-03-app-templates+views/book-a-gomix-playlist-2/index.html">Lab-4 Playlist 2 </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-01/book-a/index.html">Home Network </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-02/book-1-vagrant/index.html">Vagrant and Virtualisation </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-03/book-1-packet-sniffing/index.html">Packet Sniffing using TShark </a>
-      
-    
-  </div>
-  <div class="pusher" tabindex="-1">
-    <div class="ui basic segment">
-      <br>
-      
-        <div class="ui tab segment lab" data-tab="Lab-3a Layout">
-          <h1>CSS Design</h1>
+    </div>
+    <div class="pusher" tabindex="-1">
+      <div class="ui basic segment">
+        <br>
+        
+          <div class="ui tab segment lab" data-tab="Lab-3a Layout">
+            <h1>CSS Design</h1>
 <p>fonts · content · images · classes · folding editor · sidebar · float</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="01">
-          <h1>Setup</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="01">
+            <h1>Setup</h1>
 <p>This week we wil start a new project, but we will NOT copy over any material from last week - but rather start with a blank slate.</p>
 <p>Open Sublime text editor - and open the <code>directory</code> containing your web development projects (this folder is called <code>web-prj</code> below):</p>
 <p><img src="img/00.png" alt=""></p>
@@ -259,10 +287,10 @@ h3 {
 <p><img src="img/06.png" alt=""></p>
 <p>These are available via the <code>Preferences</code> menu.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="02">
-          <h1>Main page</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="02">
+            <h1>Main page</h1>
 <h2>lab03/index.html</h2>
 <p>Open the main index.html page and replace the template contents with the following:</p>
 <pre><code>&lt;!DOCTYPE html&gt;
@@ -365,10 +393,10 @@ h3 {
 <p><img src="img/10.png" alt=""></p>
 <p>Explore the developer tools for a little while - notice how the <code>box model</code> seems to be visible. Then close it, we will return to it later.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="03">
-          <h1>Style Sheet</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="03">
+            <h1>Style Sheet</h1>
 <p>Our first step will be to include a style sheet. Create a file called &#39;store.css&#39; and include the following:</p>
 <pre><code>body {
   font: small/1.6em Verdana, Helvetica, Arial, sans-serif;
@@ -395,10 +423,10 @@ h2 {
 <p><img src="img/12.png" alt=""></p>
 <p>Note carefully how the link slightly different to the previous one. Why is that?</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="04">
-          <h1>Additional Content</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="04">
+            <h1>Additional Content</h1>
 <p>Here is some additional content for the main index.page:</p>
 <pre><code>    &lt;h2&gt;Weekly Specials&lt;/h2&gt;
     &lt;hr&gt;
@@ -488,10 +516,10 @@ h2 {
 </ul>
 <p>(the link to &#39;deals&#39; is at the very end of the main page)</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="05">
-          <h1>Guarantee Paragraph</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="05">
+            <h1>Guarantee Paragraph</h1>
 <p>Locate the &#39;guarantee&#39; paragraph in the home page (the third paragraph):</p>
 <pre><code class="lang-html">    &lt;p&gt;
       Our guarantee: at the store, we&#39;re committed to 
@@ -601,10 +629,10 @@ h2 {
   color: black;
 }</code></pre>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="06">
-          <h1>Folding View in Sublime</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="06">
+            <h1>Folding View in Sublime</h1>
 <p>Your editor may look like this currently:</p>
 <p><img src="img/23.png" alt=""></p>
 <p>Now select the following menu option - <code>Edit-&gt;Code Folding-&gt;Fold All</code>:</p>
@@ -618,10 +646,10 @@ h2 {
 <img src="img/28.png" alt=""></p>
 <p>This can be challenging to effect - as the arrow will only appear when you hover in the correct column in the margin:</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="07">
-          <h1>Sidebar</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="07">
+            <h1>Sidebar</h1>
 <p>Open the main index.html and locate the <code>Weekly Specials</code> heading. Place a new <code>&lt;div&gt;</code> element immediately before this element:</p>
 <pre><code>    &lt;div id=&quot;weeklyspecials&quot;&gt;
     &lt;h2&gt;Weekly Specials&lt;/h2&gt;</code></pre>
@@ -841,10 +869,10 @@ h2 {
   &lt;/body&gt;
 &lt;/html&gt;</code></pre>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="08">
-          <h1>Floating Sections</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="08">
+            <h1>Floating Sections</h1>
 <p>The <code>&lt;div&gt;s</code> we have introduced have had no effect on the visual appearance of the main page - it should still look exactly as it did before we incorporated them:</p>
 <p>We can now target this division directly with the following new rules in CSS:</p>
 <pre><code class="lang-css">#weeklyspecials {
@@ -924,10 +952,10 @@ h2 {
   width:70%;
 }</code></pre>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="Exercises">
-          <h1>Exercise</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="Exercises">
+            <h1>Exercise</h1>
 <p>This is the final version of the project:</p>
 <ul>
 <li><a href="archives/lab03.zip">lab03</a></li>
@@ -959,14 +987,16 @@ h2 {
 <li><a href="https://developer.mozilla.org/en/docs/Web/CSS/border">https://developer.mozilla.org/en/docs/Web/CSS/border</a></li>
 </ul>
 
-        </div>
-      
+          </div>
+        
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-  $(document).on('keydown', function(e) {
+
+
+  <script>
+    $(document).on('keydown', function(e) {
   e = e || window.event;
   var nextTab;
   switch (e.which || e.keyCode) {
@@ -986,7 +1016,7 @@ h2 {
   }
 });
 
-  $(document).ready(function() {
+    $(document).ready(function() {
   $('img').addClass('ui image');
 
   $('.ui.embed').embed();
@@ -1019,6 +1049,16 @@ h2 {
     .sidebar('attach events', '#toc');
 });
 
-</script>
-</body>
+  </script>
+
+
+        </div>
+      </div>
+      <div class="footer"> <p> Powered by <a
+          href="https://github.com/edeleastar/tutors-ts">tutors-ts.</a>
+         </p>
+      </div>
+    </div>
+  </body>
+
 </html>

@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
-        type="text/css">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
-        rel="stylesheet"/>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  <style>
-    
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
+          type="text/css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
+          rel="stylesheet"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      
 
 body {
   font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
@@ -66,153 +66,181 @@ h3 {
 
 
 
-  </style>
-</head>
+      
 
-<body>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.footer {
+  background: white;
+  text-align: right;
+}
+.content {
+  flex: 1;
+  overflow: auto;
+}
 
 
 
-<div class="ui fixed top pointing inverted stackable menu labmenu">
-  <header class="header item">
-    <i id="toc" class="sitemap icon"></i>
-    
-      <a href="../index.html"> 2: Controllers & Views  </a>
-    
-  </header>
-  <div class="right tab-menu menu">
-    
-      <a class="item" data-tab="Lab-3 Playlist 1">
-        Lab-3 Playlist 1
-      </a>
-    
-      <a class="item" data-tab="01">
-        01
-      </a>
-    
-      <a class="item" data-tab="02">
-        02
-      </a>
-    
-      <a class="item" data-tab="03">
-        03
-      </a>
-    
-      <a class="item" data-tab="04">
-        04
-      </a>
-    
-      <a class="item" data-tab="05">
-        05
-      </a>
-    
-      <a class="item" data-tab="06">
-        06
-      </a>
-    
-      <a class="item" data-tab="07">
-        07
-      </a>
-    
-      <a class="item" data-tab="Exercises">
-        Exercises
-      </a>
-    
+    </style>
+  </head>
+
+  <body class="uk-background-muted">
+    <div class="wrapper">
+      <div class="content">
+        <div style="height:1000px;">
+          
+  
+
+  <div class="ui fixed top pointing inverted stackable menu labmenu">
+    <header class="header item">
+      <i id="toc" class="sitemap icon"></i>
+      
+        <a href="../index.html"> 2: Controllers & Views  </a>
+      
+    </header>
+    <div class="right tab-menu menu">
+      
+        <a class="item" data-tab="Lab-3 Playlist 1">
+          Lab-3 Playlist 1
+        </a>
+      
+        <a class="item" data-tab="01">
+          01
+        </a>
+      
+        <a class="item" data-tab="02">
+          02
+        </a>
+      
+        <a class="item" data-tab="03">
+          03
+        </a>
+      
+        <a class="item" data-tab="04">
+          04
+        </a>
+      
+        <a class="item" data-tab="05">
+          05
+        </a>
+      
+        <a class="item" data-tab="06">
+          06
+        </a>
+      
+        <a class="item" data-tab="07">
+          07
+        </a>
+      
+        <a class="item" data-tab="Exercises">
+          Exercises
+        </a>
+      
+    </div>
   </div>
-</div>
 
-<div class="ui pushable">
-  <div class="ui inverted labeled icon left inline vertical sidebar menu">
-    <br><br>
-    
+
+  
+
+  <div class="ui pushable">
+    <div class="ui inverted labeled icon left inline vertical sidebar menu">
+      <br><br>
       
-        <a class="item"
-           href="/topic01-introducing-html/book-a/index.html">Lab-1.1: Editing HTML </a>
+        
+          <a class="item"
+             href="/topic01-introducing-html/book-a/index.html">Lab-1.1: Editing HTML </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic01-introducing-html/book-b/index.html">Lab-1.2: HTML Structure </a>
+        
       
-        <a class="item"
-           href="/topic01-introducing-html/book-b/index.html">Lab-1.2: HTML Structure </a>
+        
+          <a class="item"
+             href="/topic02-inctroducing-css/book/index.html">Lab-2 CSS Intro </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic03-box-model/book-a/index.html">Lab-3a Layout </a>
+        
       
-        <a class="item"
-           href="/topic02-inctroducing-css/book/index.html">Lab-2 CSS Intro </a>
+        
+          <a class="item"
+             href="/topic03-box-model/book-b/index.html">Lab-3b Multicolumn </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic01a-intro-to-processing/book-1a/index.html">Lab-1a </a>
+        
       
-        <a class="item"
-           href="/topic03-box-model/book-a/index.html">Lab-3a Layout </a>
+        
+          <a class="item"
+             href="/topic01b-animate-your-drawings/book-1b/index.html">Lab-1b </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic02a-if-stmt-and-events/book/index.html">Lab-02a </a>
+        
       
-        <a class="item"
-           href="/topic03-box-model/book-b/index.html">Lab-3b Multicolumn </a>
+        
+          <a class="item"
+             href="/topic-01-intro/book-a-glitch-intro/index.html">Lab-1 Glitch Intro </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic-01-intro/book-b-js-introduction/index.html">Lab-2 JS Intro </a>
+        
       
-        <a class="item"
-           href="/topic01a-intro-to-processing/book-1a/index.html">Lab-1a </a>
+        
+          <a class="item"
+             href="/topic-02-controllers-and-views/book-a-gomix-playlist-1/index.html">Lab-3 Playlist 1 </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic-03-app-templates+views/book-a-gomix-playlist-2/index.html">Lab-4 Playlist 2 </a>
+        
       
-        <a class="item"
-           href="/topic01b-animate-your-drawings/book-1b/index.html">Lab-1b </a>
+        
+          <a class="item"
+             href="/topic-01/book-a/index.html">Home Network </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic-02/book-1-vagrant/index.html">Vagrant and Virtualisation </a>
+        
       
-        <a class="item"
-           href="/topic02a-if-stmt-and-events/book/index.html">Lab-02a </a>
+        
+          <a class="item"
+             href="/topic-03/book-1-packet-sniffing/index.html">Packet Sniffing using TShark </a>
+        
       
-    
-      
-        <a class="item"
-           href="/topic-01-intro/book-a-glitch-intro/index.html">Lab-1 Glitch Intro </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-01-intro/book-b-js-introduction/index.html">Lab-2 JS Intro </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-02-controllers-and-views/book-a-gomix-playlist-1/index.html">Lab-3 Playlist 1 </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-03-app-templates+views/book-a-gomix-playlist-2/index.html">Lab-4 Playlist 2 </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-01/book-a/index.html">Home Network </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-02/book-1-vagrant/index.html">Vagrant and Virtualisation </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-03/book-1-packet-sniffing/index.html">Packet Sniffing using TShark </a>
-      
-    
-  </div>
-  <div class="pusher" tabindex="-1">
-    <div class="ui basic segment">
-      <br>
-      
-        <div class="ui tab segment lab" data-tab="Lab-3 Playlist 1">
-          <h1>Objectives</h1>
+    </div>
+    <div class="pusher" tabindex="-1">
+      <div class="ui basic segment">
+        <br>
+        
+          <div class="ui tab segment lab" data-tab="Lab-3 Playlist 1">
+            <h1>Objectives</h1>
 <p>Import and run a new starter project. Extend this project to include multiple &#39;views&#39;. Explore the handlebars templating library.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="01">
-          <h1>Template 1</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="01">
+            <h1>Template 1</h1>
 <p>Create a new project in Glitch - this will be a replica of the project created at the start of the last lab. Rename the project to your preference.</p>
 <p>Turn on the logs viewer now.</p>
 <p>From the Advanced options, Select <code>Import a project from github</code>. (You may need to grant access to your github account before this option becomes available).</p>
@@ -230,10 +258,10 @@ h3 {
 <p><img src="img/19.png" alt=""></p>
 <p>This should fix the problem. You only need this step if the app will fail to run...</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="02">
-          <h1>Playlist</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="02">
+            <h1>Playlist</h1>
 <p>We are going to evolve this project into a simple playlist maker, enabling a user to create a playlist of songs. In this step, we will layout a static version.</p>
 <p>First, we can make some simple changes to rebrand the app as <code>Playlist 1</code> instead of <code>Template 1</code></p>
 <p>First replace the existing corresponding lines of code with each of the following in the views:</p>
@@ -265,10 +293,10 @@ h3 {
 ...</code></pre>
 <p>Make sure the app is still running, but with the new branding. If there are errors, turn the logs and you may be able to see the source of the problem - which will usually be some small error in the javascript sources.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="03">
-          <h1>Static Playlist</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="03">
+            <h1>Static Playlist</h1>
 <p>In this step we will start to display the playlist itself. First, create a new partial called <code>listsongs.hbs</code>:</p>
 <h2>views/partials/listsongs.hbs</h2>
 <pre><code class="lang-html">&lt;table class=&quot;ui table&quot;&gt;
@@ -349,10 +377,10 @@ h3 {
 ...</code></pre>
 <p>Error and debug messages may appear in red. You might need to open the <code>source</code> and <code>run</code> views of the app in side by side windows to get a clearer view of the logs.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="04">
-          <h1>Dynamic Playlist</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="04">
+            <h1>Dynamic Playlist</h1>
 <p>The app as we have it now could have been completely built as a static web site. However, the framework and tools we have used in this version enable us to evolve this static site into an interactive web app.</p>
 <p>The first step is to eliminate some of the static content from the listsongs partial. Here is a new version to replace the current version (in listsongs.hbs replace the table with the following):</p>
 <pre><code class="lang-html">&lt;table class=&quot;ui table&quot;&gt;
@@ -446,10 +474,10 @@ index(request, response) {
 <p>This will change how the playlists are displayed in the logs:</p>
 <p><img src="img/13.png" alt=""></p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="05">
-          <h1>playlist-store</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="05">
+            <h1>playlist-store</h1>
 <p>We would like to manage the playlists separately from the controller, so that we can eventually introduce multiple playlists.</p>
 <p>To prepare for this, create a new javascript module your app. Call it <code>playlist-store.js</code> in a new <code>models</code> folder. In Glitch, you can enter a full path, including a new directory when adding a file:</p>
 <p><img src="img/14.png" alt=""></p>
@@ -500,10 +528,10 @@ const dashboard = {
 module.exports = dashboard;</code></pre>
 <p>Notice in the above that we are importing the sonatas from the playlist-store module. Otherwise, the dashboard is unchanged.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="06">
-          <h1>Multiple playlists</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="06">
+            <h1>Multiple playlists</h1>
 <p>Here is a new version of <code>playlist-store.js</code>:</p>
 <h2>models/playlist-store.js</h2>
 <pre><code>&#39;use strict&#39;;
@@ -634,10 +662,10 @@ OR</li>
 <li>the title of a song</li>
 </ul>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="07">
-          <h1>Introducing JSON</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="07">
+            <h1>Introducing JSON</h1>
 <p>In javascript, it can sometimes be very convenient to use a notation to represent a data structure, but without any additional javascript constructs. Java Script Object Notation (JSON) is designed for this purpose. Here is a new file to represent our playlists in JSON format, create it in your app now:</p>
 <h2>models/playlist-store.json</h2>
 <pre><code class="lang-js">{
@@ -688,10 +716,10 @@ const playlistCollection = require(&#39;./playlist-store.json&#39;).playlistColl
 module.exports = playlistCollection;</code></pre>
 <p>The program should behave exactly as before.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="Exercises">
-          <h1>Exercises &amp; Archives</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="Exercises">
+            <h1>Exercises &amp; Archives</h1>
 <p>If you want to download a complete version of the app as it should be at the end of this lab, then create a new Gomix project, and import <code>wit-hdip-comp-sci-2018/playlist-1</code>. Be sure to create a new project first, as when you import you will completely replace the current project.</p>
 <h2>Exercise 1: Review the JSON file format</h2>
 <p>Look again at the playlist as represented in:</p>
@@ -729,14 +757,16 @@ module.exports = playlistCollection;</code></pre>
 <h2>Exercise 5: Run Locally</h2>
 <p>Download the app and run it on your own workstation. Instructions for doing this are in the last lab.</p>
 
-        </div>
-      
+          </div>
+        
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-  $(document).on('keydown', function(e) {
+
+
+  <script>
+    $(document).on('keydown', function(e) {
   e = e || window.event;
   var nextTab;
   switch (e.which || e.keyCode) {
@@ -756,7 +786,7 @@ module.exports = playlistCollection;</code></pre>
   }
 });
 
-  $(document).ready(function() {
+    $(document).ready(function() {
   $('img').addClass('ui image');
 
   $('.ui.embed').embed();
@@ -789,6 +819,16 @@ module.exports = playlistCollection;</code></pre>
     .sidebar('attach events', '#toc');
 });
 
-</script>
-</body>
+  </script>
+
+
+        </div>
+      </div>
+      <div class="footer"> <p> Powered by <a
+          href="https://github.com/edeleastar/tutors-ts">tutors-ts.</a>
+         </p>
+      </div>
+    </div>
+  </body>
+
 </html>

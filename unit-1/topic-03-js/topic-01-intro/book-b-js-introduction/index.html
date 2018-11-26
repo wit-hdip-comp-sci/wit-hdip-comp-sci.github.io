@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
-        type="text/css">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
-        rel="stylesheet"/>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  <style>
-    
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
+          type="text/css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
+          rel="stylesheet"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      
 
 body {
   font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
@@ -66,151 +66,179 @@ h3 {
 
 
 
-  </style>
-</head>
+      
 
-<body>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.footer {
+  background: white;
+  text-align: right;
+}
+.content {
+  flex: 1;
+  overflow: auto;
+}
 
 
 
-<div class="ui fixed top pointing inverted stackable menu labmenu">
-  <header class="header item">
-    <i id="toc" class="sitemap icon"></i>
-    
-      <a href="../index.html"> 1: Introduction to Glitch  </a>
-    
-  </header>
-  <div class="right tab-menu menu">
-    
-      <a class="item" data-tab="Lab-2 JS Intro">
-        Lab-2 JS Intro
-      </a>
-    
-      <a class="item" data-tab="01">
-        01
-      </a>
-    
-      <a class="item" data-tab="02">
-        02
-      </a>
-    
-      <a class="item" data-tab="03">
-        03
-      </a>
-    
-      <a class="item" data-tab="04">
-        04
-      </a>
-    
-      <a class="item" data-tab="05">
-        05
-      </a>
-    
-      <a class="item" data-tab="06">
-        06
-      </a>
-    
-      <a class="item" data-tab="07">
-        07
-      </a>
-    
-      <a class="item" data-tab="Exercises">
-        Exercises
-      </a>
-    
-      <a class="item" data-tab=".">
-        .
-      </a>
-    
+    </style>
+  </head>
+
+  <body class="uk-background-muted">
+    <div class="wrapper">
+      <div class="content">
+        <div style="height:1000px;">
+          
+  
+
+  <div class="ui fixed top pointing inverted stackable menu labmenu">
+    <header class="header item">
+      <i id="toc" class="sitemap icon"></i>
+      
+        <a href="../index.html"> 1: Introduction to Glitch  </a>
+      
+    </header>
+    <div class="right tab-menu menu">
+      
+        <a class="item" data-tab="Lab-2 JS Intro">
+          Lab-2 JS Intro
+        </a>
+      
+        <a class="item" data-tab="01">
+          01
+        </a>
+      
+        <a class="item" data-tab="02">
+          02
+        </a>
+      
+        <a class="item" data-tab="03">
+          03
+        </a>
+      
+        <a class="item" data-tab="04">
+          04
+        </a>
+      
+        <a class="item" data-tab="05">
+          05
+        </a>
+      
+        <a class="item" data-tab="06">
+          06
+        </a>
+      
+        <a class="item" data-tab="07">
+          07
+        </a>
+      
+        <a class="item" data-tab="Exercises">
+          Exercises
+        </a>
+      
+        <a class="item" data-tab=".">
+          .
+        </a>
+      
+    </div>
   </div>
-</div>
 
-<div class="ui pushable">
-  <div class="ui inverted labeled icon left inline vertical sidebar menu">
-    <br><br>
-    
+
+  
+
+  <div class="ui pushable">
+    <div class="ui inverted labeled icon left inline vertical sidebar menu">
+      <br><br>
       
-        <a class="item"
-           href="/topic01-introducing-html/book-a/index.html">Lab-1.1: Editing HTML </a>
+        
+          <a class="item"
+             href="/topic01-introducing-html/book-a/index.html">Lab-1.1: Editing HTML </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic01-introducing-html/book-b/index.html">Lab-1.2: HTML Structure </a>
+        
       
-        <a class="item"
-           href="/topic01-introducing-html/book-b/index.html">Lab-1.2: HTML Structure </a>
+        
+          <a class="item"
+             href="/topic02-inctroducing-css/book/index.html">Lab-2 CSS Intro </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic03-box-model/book-a/index.html">Lab-3a Layout </a>
+        
       
-        <a class="item"
-           href="/topic02-inctroducing-css/book/index.html">Lab-2 CSS Intro </a>
+        
+          <a class="item"
+             href="/topic03-box-model/book-b/index.html">Lab-3b Multicolumn </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic01a-intro-to-processing/book-1a/index.html">Lab-1a </a>
+        
       
-        <a class="item"
-           href="/topic03-box-model/book-a/index.html">Lab-3a Layout </a>
+        
+          <a class="item"
+             href="/topic01b-animate-your-drawings/book-1b/index.html">Lab-1b </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic02a-if-stmt-and-events/book/index.html">Lab-02a </a>
+        
       
-        <a class="item"
-           href="/topic03-box-model/book-b/index.html">Lab-3b Multicolumn </a>
+        
+          <a class="item"
+             href="/topic-01-intro/book-a-glitch-intro/index.html">Lab-1 Glitch Intro </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic-01-intro/book-b-js-introduction/index.html">Lab-2 JS Intro </a>
+        
       
-        <a class="item"
-           href="/topic01a-intro-to-processing/book-1a/index.html">Lab-1a </a>
+        
+          <a class="item"
+             href="/topic-02-controllers-and-views/book-a-gomix-playlist-1/index.html">Lab-3 Playlist 1 </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic-03-app-templates+views/book-a-gomix-playlist-2/index.html">Lab-4 Playlist 2 </a>
+        
       
-        <a class="item"
-           href="/topic01b-animate-your-drawings/book-1b/index.html">Lab-1b </a>
+        
+          <a class="item"
+             href="/topic-01/book-a/index.html">Home Network </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic-02/book-1-vagrant/index.html">Vagrant and Virtualisation </a>
+        
       
-        <a class="item"
-           href="/topic02a-if-stmt-and-events/book/index.html">Lab-02a </a>
+        
+          <a class="item"
+             href="/topic-03/book-1-packet-sniffing/index.html">Packet Sniffing using TShark </a>
+        
       
-    
-      
-        <a class="item"
-           href="/topic-01-intro/book-a-glitch-intro/index.html">Lab-1 Glitch Intro </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-01-intro/book-b-js-introduction/index.html">Lab-2 JS Intro </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-02-controllers-and-views/book-a-gomix-playlist-1/index.html">Lab-3 Playlist 1 </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-03-app-templates+views/book-a-gomix-playlist-2/index.html">Lab-4 Playlist 2 </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-01/book-a/index.html">Home Network </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-02/book-1-vagrant/index.html">Vagrant and Virtualisation </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-03/book-1-packet-sniffing/index.html">Packet Sniffing using TShark </a>
-      
-    
-  </div>
-  <div class="pusher" tabindex="-1">
-    <div class="ui basic segment">
-      <br>
-      
-        <div class="ui tab segment lab" data-tab="Lab-2 JS Intro">
-          <h1>Objectives</h1>
+    </div>
+    <div class="pusher" tabindex="-1">
+      <div class="ui basic segment">
+        <br>
+        
+          <div class="ui tab segment lab" data-tab="Lab-2 JS Intro">
+            <h1>Objectives</h1>
 <p>Background &amp; Tools, Variables &amp; Boolean Logic</p>
 <h2>Background &amp; Tools</h2>
 <ul>
@@ -242,10 +270,10 @@ h3 {
 <li>Compose a simple method inside an object.</li>
 </ul>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="01">
-          <h1>Running Javascript</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="01">
+            <h1>Running Javascript</h1>
 <h2>Option 1: Chrome Developer Console</h2>
 <p>For some of the short JavaScript examples, we will be using the Chrome console. To open up the console press <code>Control + Shift + J</code> on Windows and Linux (on a Mac <code>Option + Command + j</code>) . Another way to get to the console is to right click on the web page, select Inspect, and then move to the tab called <code>Console</code>.</p>
 <p>Inside of this console you can write JavaScript! So let&#39;s start by alerting a message. In the Chrome Console, type the following:</p>
@@ -276,10 +304,10 @@ h3 {
 <h1>Exercises</h1>
 <h2>Exercise 1. Create the html and javascript files shown in this step.</h2>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="02">
-          <h1>Variables</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="02">
+            <h1>Variables</h1>
 <h2>Fundamentals</h2>
 <p>What&#39;s a variable, and why would you ever want to use one? The word &quot;variable&quot; may be most familiar to you mathematics classes, when you often use letters like <em>x</em> or <em>y</em> to represent numbers.</p>
 <p>This idea also exists in programming languages. Using variables lets us write code that&#39;s easier to read and also easier to change. It&#39;s unlikely you&#39;ll ever write a significant amount of JavaScript code without using variables, so it&#39;s good to get used to them early.</p>
@@ -332,10 +360,10 @@ this is the ending. */</code></pre>
 </ul>
 <p>Log these to the console.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="03">
-          <h1>Primitive Data Types</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="03">
+            <h1>Primitive Data Types</h1>
 <p>Most of the variables so far stored <em>strings</em>. But JavaScript can work with other types of data as well. Let&#39;s take a look at the primitive data types.</p>
 <p>JavaScript has 6 primitive data types, but we&#39;ll only talk about 5 of them. Here&#39;s what they look like:</p>
 <ul>
@@ -428,10 +456,10 @@ parseFloat(&quot;w2.3alkweflakwe&quot;); // NaN (not a number)</code></pre>
 <p>Log these values to the console along with a friendly message.</p>
 <p>Load <code>first.html</code> in chrome and keep an eye on the console to see that the message is being displayed.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="04">
-          <h1>Boolean Logic</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="04">
+            <h1>Boolean Logic</h1>
 <h3>Boolean Logic</h3>
 <p>An essential part of writing programs is being able to execute code that depends on certain conditions. There are many different examples when you&#39;d want to conditionally execute code. Here are just a few:</p>
 <ul>
@@ -599,10 +627,10 @@ if (isLearning) {
 </ol>
 <p>Test the fragment in the chrome developer console.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="05">
-          <h1>Const, Let &amp; Simple Objects</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="05">
+            <h1>Const, Let &amp; Simple Objects</h1>
 <h2>Const &amp; Let</h2>
 <p>The variable statement declares a variable, optionally initializing it to a value.</p>
 <h3>var</h3>
@@ -685,10 +713,10 @@ console.log (&#39;homer = &#39; + homer);</code></pre>
 <h2>Exercise 2: Lisa</h2>
 <p>Create an object called <code>lisa</code>, with Lisa&#39;s details (say her age is 12). In addition, store her favourite musical instrument. Log the object to the console.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="06">
-          <h1>Objects with Functions</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="06">
+            <h1>Objects with Functions</h1>
 <p>Try this object in the console:</p>
 <pre><code>const marge = {
   firstName: &#39;marge&#39;,
@@ -731,10 +759,10 @@ ned.speak();</code></pre>
 <h2>Exercise 1: Objects with Functions</h2>
 <p>Create another Simpsons character of your choice. Include a hello() function, and have the function say something relevant to the character. Also include a goodby() function which says something else. Once you have created the objects, call them functions a few times.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="07">
-          <h1>Chrome Debugger</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="07">
+            <h1>Chrome Debugger</h1>
 <p>Use this copy of the <code>simpsons.js</code> file (copy/paste in, replacing your content:</p>
 <h2>simpsons.js</h2>
 <pre><code>const homer = {
@@ -796,10 +824,10 @@ ned.speak();</code></pre>
 <p>These are called <code>breakpoints</code>, and they allow you to stop the program at the point indicated. You can remove a breakpoint by double clicking in the margin. </p>
 <p>Try to understand what happens when you press the reload button on the browser. Also, explore the right hand pane in the developer tools console</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="Exercises">
-          <h1>Exercises</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="Exercises">
+            <h1>Exercises</h1>
 <h2>Exercise 1:</h2>
 <p>Using the <code>simpsons.html</code> and <code>simpsons.js</code> files from the last step as a guide, create a new pair of files called <code>exercise-01.html</code> and <code>exercise-01.js</code>. Make sure exercise-01.html loads exercise-01.js.</p>
 <p>In exercise-01.js, write a function that reads a firstname, lastname and age using the <code>prompt</code> function, create and object called <code>user</code> that contains these values, and then logs that object to the console.</p>
@@ -851,10 +879,10 @@ if(firstVariable){
 </ol>
 <p>Run the script - in the console or in first.js - to see if your answers are correct.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab=".">
-          <h1>Exercise 1:</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab=".">
+            <h1>Exercise 1:</h1>
 <pre><code>const usersFirstName = prompt(&#39;enter first name&#39;);
 const usersLastName = prompt(&#39;enter first name&#39;);
 const usersAge = prompt(&#39;enter first name&#39;);
@@ -888,14 +916,16 @@ user.sayHello();</code></pre>
 <h1>Exercise 3:</h1>
 <pre><code>Have a go yourself!</code></pre>
 
-        </div>
-      
+          </div>
+        
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-  $(document).on('keydown', function(e) {
+
+
+  <script>
+    $(document).on('keydown', function(e) {
   e = e || window.event;
   var nextTab;
   switch (e.which || e.keyCode) {
@@ -915,7 +945,7 @@ user.sayHello();</code></pre>
   }
 });
 
-  $(document).ready(function() {
+    $(document).ready(function() {
   $('img').addClass('ui image');
 
   $('.ui.embed').embed();
@@ -948,6 +978,16 @@ user.sayHello();</code></pre>
     .sidebar('attach events', '#toc');
 });
 
-</script>
-</body>
+  </script>
+
+
+        </div>
+      </div>
+      <div class="footer"> <p> Powered by <a
+          href="https://github.com/edeleastar/tutors-ts">tutors-ts.</a>
+         </p>
+      </div>
+    </div>
+  </body>
+
 </html>

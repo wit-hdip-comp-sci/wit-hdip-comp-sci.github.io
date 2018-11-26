@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
-        type="text/css">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
-        rel="stylesheet"/>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  <style>
-    
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
+          type="text/css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
+          rel="stylesheet"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      
 
 body {
   font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
@@ -66,157 +66,185 @@ h3 {
 
 
 
-  </style>
-</head>
+      
 
-<body>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.footer {
+  background: white;
+  text-align: right;
+}
+.content {
+  flex: 1;
+  overflow: auto;
+}
 
 
 
-<div class="ui fixed top pointing inverted stackable menu labmenu">
-  <header class="header item">
-    <i id="toc" class="sitemap icon"></i>
-    
-      <a href="../index.html">  1b: Animating your Drawings  </a>
-    
-  </header>
-  <div class="right tab-menu menu">
-    
-      <a class="item" data-tab="Lab-1b">
-        Lab-1b
-      </a>
-    
-      <a class="item" data-tab="PDE">
-        PDE
-      </a>
-    
-      <a class="item" data-tab="01">
-        01
-      </a>
-    
-      <a class="item" data-tab="02">
-        02
-      </a>
-    
-      <a class="item" data-tab="03">
-        03
-      </a>
-    
-      <a class="item" data-tab="04">
-        04
-      </a>
-    
-      <a class="item" data-tab="05">
-        05
-      </a>
-    
-      <a class="item" data-tab="Exercises">
-        Exercises
-      </a>
-    
-      <a class="item" data-tab="Challenges">
-        Challenges
-      </a>
-    
-      <a class="item" data-tab="Solutions">
-        Solutions
-      </a>
-    
+    </style>
+  </head>
+
+  <body class="uk-background-muted">
+    <div class="wrapper">
+      <div class="content">
+        <div style="height:1000px;">
+          
+  
+
+  <div class="ui fixed top pointing inverted stackable menu labmenu">
+    <header class="header item">
+      <i id="toc" class="sitemap icon"></i>
+      
+        <a href="../index.html">  1b: Animating your Drawings  </a>
+      
+    </header>
+    <div class="right tab-menu menu">
+      
+        <a class="item" data-tab="Lab-1b">
+          Lab-1b
+        </a>
+      
+        <a class="item" data-tab="PDE">
+          PDE
+        </a>
+      
+        <a class="item" data-tab="01">
+          01
+        </a>
+      
+        <a class="item" data-tab="02">
+          02
+        </a>
+      
+        <a class="item" data-tab="03">
+          03
+        </a>
+      
+        <a class="item" data-tab="04">
+          04
+        </a>
+      
+        <a class="item" data-tab="05">
+          05
+        </a>
+      
+        <a class="item" data-tab="Exercises">
+          Exercises
+        </a>
+      
+        <a class="item" data-tab="Challenges">
+          Challenges
+        </a>
+      
+        <a class="item" data-tab="Solutions">
+          Solutions
+        </a>
+      
+    </div>
   </div>
-</div>
 
-<div class="ui pushable">
-  <div class="ui inverted labeled icon left inline vertical sidebar menu">
-    <br><br>
-    
+
+  
+
+  <div class="ui pushable">
+    <div class="ui inverted labeled icon left inline vertical sidebar menu">
+      <br><br>
       
-        <a class="item"
-           href="/topic01-introducing-html/book-a/index.html">Lab-1.1: Editing HTML </a>
+        
+          <a class="item"
+             href="/topic01-introducing-html/book-a/index.html">Lab-1.1: Editing HTML </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic01-introducing-html/book-b/index.html">Lab-1.2: HTML Structure </a>
+        
       
-        <a class="item"
-           href="/topic01-introducing-html/book-b/index.html">Lab-1.2: HTML Structure </a>
+        
+          <a class="item"
+             href="/topic02-inctroducing-css/book/index.html">Lab-2 CSS Intro </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic03-box-model/book-a/index.html">Lab-3a Layout </a>
+        
       
-        <a class="item"
-           href="/topic02-inctroducing-css/book/index.html">Lab-2 CSS Intro </a>
+        
+          <a class="item"
+             href="/topic03-box-model/book-b/index.html">Lab-3b Multicolumn </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic01a-intro-to-processing/book-1a/index.html">Lab-1a </a>
+        
       
-        <a class="item"
-           href="/topic03-box-model/book-a/index.html">Lab-3a Layout </a>
+        
+          <a class="item"
+             href="/topic01b-animate-your-drawings/book-1b/index.html">Lab-1b </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic02a-if-stmt-and-events/book/index.html">Lab-02a </a>
+        
       
-        <a class="item"
-           href="/topic03-box-model/book-b/index.html">Lab-3b Multicolumn </a>
+        
+          <a class="item"
+             href="/topic-01-intro/book-a-glitch-intro/index.html">Lab-1 Glitch Intro </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic-01-intro/book-b-js-introduction/index.html">Lab-2 JS Intro </a>
+        
       
-        <a class="item"
-           href="/topic01a-intro-to-processing/book-1a/index.html">Lab-1a </a>
+        
+          <a class="item"
+             href="/topic-02-controllers-and-views/book-a-gomix-playlist-1/index.html">Lab-3 Playlist 1 </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic-03-app-templates+views/book-a-gomix-playlist-2/index.html">Lab-4 Playlist 2 </a>
+        
       
-        <a class="item"
-           href="/topic01b-animate-your-drawings/book-1b/index.html">Lab-1b </a>
+        
+          <a class="item"
+             href="/topic-01/book-a/index.html">Home Network </a>
+        
       
-    
+        
+          <a class="item"
+             href="/topic-02/book-1-vagrant/index.html">Vagrant and Virtualisation </a>
+        
       
-        <a class="item"
-           href="/topic02a-if-stmt-and-events/book/index.html">Lab-02a </a>
+        
+          <a class="item"
+             href="/topic-03/book-1-packet-sniffing/index.html">Packet Sniffing using TShark </a>
+        
       
-    
-      
-        <a class="item"
-           href="/topic-01-intro/book-a-glitch-intro/index.html">Lab-1 Glitch Intro </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-01-intro/book-b-js-introduction/index.html">Lab-2 JS Intro </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-02-controllers-and-views/book-a-gomix-playlist-1/index.html">Lab-3 Playlist 1 </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-03-app-templates+views/book-a-gomix-playlist-2/index.html">Lab-4 Playlist 2 </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-01/book-a/index.html">Home Network </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-02/book-1-vagrant/index.html">Vagrant and Virtualisation </a>
-      
-    
-      
-        <a class="item"
-           href="/topic-03/book-1-packet-sniffing/index.html">Packet Sniffing using TShark </a>
-      
-    
-  </div>
-  <div class="pusher" tabindex="-1">
-    <div class="ui basic segment">
-      <br>
-      
-        <div class="ui tab segment lab" data-tab="Lab-1b">
-          <h1>Objectives</h1>
+    </div>
+    <div class="pusher" tabindex="-1">
+      <div class="ui basic segment">
+        <br>
+        
+          <div class="ui tab segment lab" data-tab="Lab-1b">
+            <h1>Objectives</h1>
 <p>animate simple drawings · variables · system variables · primitive data types · arithmetic operators</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="PDE">
-          <h1>Opening the PDE (Processing Development Environment)</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="PDE">
+            <h1>Opening the PDE (Processing Development Environment)</h1>
 <p>Go to the directory/folder where you installed your processing app.  </p>
 <p>You should see a list of files and folders similar to the image below:</p>
 <p><img src="./img/01.png" alt="Processing Development Environment files"></p>
@@ -224,10 +252,10 @@ h3 {
 <p>The PDE (Processing Development Environment) should launch.</p>
 <p><img src="./img/02.png" alt="The Processing Development Environment"></p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="01">
-          <h1>Basic Animation</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="01">
+            <h1>Basic Animation</h1>
 <ul>
 <li>We will use the following built-in functions to animate our drawings:<ul>
 <li>setup()</li>
@@ -256,10 +284,10 @@ h3 {
 <p><img src="./img/04.png" alt="Animating Ellipses - Multiple Circles"></p>
 <p>Can you explain why there are multiple circles drawn?  Why not just one circle? </p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="02">
-          <h1>Animating Ellipses (continued)</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="02">
+            <h1>Animating Ellipses (continued)</h1>
 <p>We are now going to change the code (from the previous step) so that only one circle is shown when you move the mouse.</p>
 <p>Amend your code so that the background function is in the draw method instead of the setup method:</p>
 <p><img src="./img/05.png" alt="Animating Ellipses - One Circle"></p>
@@ -267,10 +295,10 @@ h3 {
 <p><img src="./img/06.png" alt="Animating Ellipses - One Circle"></p>
 <p>Can you explain why there is only one circle drawn as we move our mouse? </p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="03">
-          <h1>Playing with the System Variables</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="03">
+            <h1>Playing with the System Variables</h1>
 <p>What would happen to our animation if we swapped the <strong>mouseX</strong> and <strong>mouseY</strong> system variables in the <strong>ellipse</strong> function with each other?  </p>
 <p>Make this change (the code change is below, if you need it) and see if you can figure out what is going on.</p>
 <pre><code>    ellipse(mouseY, mouseX, 100, 100)</code></pre>
@@ -279,10 +307,10 @@ h3 {
 <p>Make this change and see if you can figure out what is going on.</p>
 <p>Save your work (we will use a new sketch for step05).</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="04">
-          <h1>Primitive Data Types</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="04">
+            <h1>Primitive Data Types</h1>
 <p>In Java, there are:
 - four whole number data types:  byte, short, int, long.
 - two decimal number data types: float (default in Processing) and double (default in Java apps).
@@ -307,10 +335,10 @@ h3 {
 <p>Change 70.56 back to 70.</p>
 <p>Save and close the sketchbook.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="05">
-          <h1>Primitive Data Types</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="05">
+            <h1>Primitive Data Types</h1>
 <h2>Using the float data type</h2>
 <p>Create a new Sketchbook in your PDE and save it as <strong>lab01b_step06</strong>.</p>
 <p>Enter the following code:</p>
@@ -333,10 +361,10 @@ rect(xCoordinate, yCoordinate, 80,80);</code></pre>
 <p>Change the code back.</p>
 <p>Save and close the sketchbook.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="Exercises">
-          <h1>Exercises</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="Exercises">
+            <h1>Exercises</h1>
 <p>The exercises are typically based on the material we covered in the previous steps in this lab and the associated lectures.</p>
 <p>For each exercise listed below, open a new sketch.</p>
 <h2>Exercise 1 (static drawing)</h2>
@@ -372,10 +400,10 @@ rect(xCoordinate, yCoordinate, 80,80);</code></pre>
 </ul>
 <p>When you run your code, the black circle should overlap the white circle when you drag your mouse from (0,0) diagnolally down to (100,100).  When you move your mouse horizontally, the black circle show grow/shrink in size.  It remains the same size when the mouse is dragged vertically.  Note that the white circle&#39;s behaviour hasn&#39;t changed.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="Challenges">
-          <h1>Challenges</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="Challenges">
+            <h1>Challenges</h1>
 <p>For each exercise listed below, open a new sketchbook.</p>
 <p>You may need to visit the <a href="https://processing.org/reference/">Processing website</a> for additional information.</p>
 <h2>Challenge 1 (animated drawing with no cursor)</h2>
@@ -388,22 +416,24 @@ rect(xCoordinate, yCoordinate, 80,80);</code></pre>
 <p>Do some research into the Processing variables:  pmousex and pmousey.</p>
 <p>Write a Processing sketch that uses these variables. </p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="Solutions">
-          <h1>Solutions</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="Solutions">
+            <h1>Solutions</h1>
 <p>The solutions for this lab can be found <a href="archives/lab01b_solutions.zip">here</a>. </p>
 <p>If you require unzipping software, 7zip is a good choice: <a href="http://www.7-zip.org/">http://www.7-zip.org/</a> (or Keka for Mac <a href="http://www.kekaosx.com/en/">http://www.kekaosx.com/en/</a>)</p>
 <p>After unzipping the solutions, it might be a good idea to copy the folders to your <strong>sketchbook</strong> folder.  From Processing, you could then use <strong>File</strong>, followed by <strong>Sketchbook</strong> to easily open them.</p>
 
-        </div>
-      
+          </div>
+        
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-  $(document).on('keydown', function(e) {
+
+
+  <script>
+    $(document).on('keydown', function(e) {
   e = e || window.event;
   var nextTab;
   switch (e.which || e.keyCode) {
@@ -423,7 +453,7 @@ rect(xCoordinate, yCoordinate, 80,80);</code></pre>
   }
 });
 
-  $(document).ready(function() {
+    $(document).ready(function() {
   $('img').addClass('ui image');
 
   $('.ui.embed').embed();
@@ -456,6 +486,16 @@ rect(xCoordinate, yCoordinate, 80,80);</code></pre>
     .sidebar('attach events', '#toc');
 });
 
-</script>
-</body>
+  </script>
+
+
+        </div>
+      </div>
+      <div class="footer"> <p> Powered by <a
+          href="https://github.com/edeleastar/tutors-ts">tutors-ts.</a>
+         </p>
+      </div>
+    </div>
+  </body>
+
 </html>
